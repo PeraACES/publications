@@ -12,9 +12,9 @@ export default function precedings() {
                                 <a href="post-single.html"><img src="images/img_h_1.jpg" alt="Image" className="img-fluid" /></a>
                                 <h2><a href="blog-single.html">Escape 2021 Precedings</a></h2>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi temporibus praesentium neque, voluptatum quam quibusdam.</p>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <input type="submit" value="View More" class="btn-2 btn-primary py-2 px-8" />
+                                <div className="row">
+                                    <div className="col-12">
+                                        <input type="submit" value="View More" className="btn-2 btn-primary py-2 px-8" />
                                     </div>
                                 </div>
                                 </div>
@@ -26,9 +26,9 @@ export default function precedings() {
                                     <a href="post-single.html"><img src="images/img_h_1.jpg" alt="Image" className="img-fluid" /></a>
                                     <h2><a href="blog-single.html">Escape 2021 Precedings</a></h2>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi temporibus praesentium neque, voluptatum quam quibusdam.</p>
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <input type="submit" value="View More" class="btn-2 btn-primary py-2 px-8" />
+                                    <div className="row">
+                                        <div className="col-12">
+                                            <input type="submit" value="View More" className="btn-2 btn-primary py-2 px-8" />
                                         </div>
                                     </div>
                                 </div>
@@ -42,9 +42,9 @@ export default function precedings() {
                                 <a href="post-single.html"><img src="images/img_h_1.jpg" alt="Image" className="img-fluid" /></a>
                                 <h2><a href="blog-single.html">Escape 2021 Precedings</a></h2>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi temporibus praesentium neque, voluptatum quam quibusdam.</p>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <input type="submit" value="View More" class="btn-2 btn-primary py-2 px-8" />
+                                <div className="row">
+                                    <div className="col-12">
+                                        <input type="submit" value="View More" className="btn-2 btn-primary py-2 px-8" />
                                     </div>
                                 </div>
                                 </div>
@@ -56,9 +56,9 @@ export default function precedings() {
                                 <a href="post-single.html"><img src="images/img_h_1.jpg" alt="Image" className="img-fluid" /></a>
                                 <h2><a href="blog-single.html">Escape 2021 Precedings</a></h2>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi temporibus praesentium neque, voluptatum quam quibusdam.</p>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <input type="submit" value="View More" class="btn-2 btn-primary py-2 px-8" />
+                                <div className="row">
+                                    <div className="col-12">
+                                        <input type="submit" value="View More" className="btn-2 btn-primary py-2 px-8" />
                                     </div>
                                 </div>
                                 </div>
