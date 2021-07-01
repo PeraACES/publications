@@ -1,5 +1,6 @@
 import React from 'react'
 import TopBar from '../TopBar/TopBar'
+import Link from 'next/link'
 
 export default function Header() {
     return (
@@ -11,28 +12,20 @@ export default function Header() {
                         <div className="d-flex align-items-center">                
                             <div className="mr-auto">
                                 <nav className="site-navigation position-relative text-right" role="navigation">
-                                <ul className="site-menu main-menu js-clone-nav mr-auto d-none pl-0 d-lg-block">
-                                    <li className="active">
-                                    <a href="#section1" className="nav-link text-left">Home</a>
-                                    </li>
-                                    <li>
-                                    <a href="#section2" className="nav-link text-left">Categories</a>
-                                    </li>
-                                    <li>
-                                    <a href="#section3" className="nav-link text-left">Politics</a>
-                                    </li>
-                                    <li>
-                                    <a href="#section4" className="nav-link text-left">Business</a>
-                                    </li>
-                                    <li>
-                                        <a href="#section5" className="nav-link text-left">Health</a>
-                                    </li>
-                                    <li><a href="categories.html" className="nav-link text-left">Design</a></li>
-                                    <li>
-                                    <a href="categories.html" className="nav-link text-left">Sport</a>
-                                    </li>
-                                    <li><a href="contact.html" className="nav-link text-left">Contact</a></li>
-                                </ul>                                                                                                                                                                                                                                                                                         
+                                    <ul className="site-menu main-menu js-clone-nav mr-auto d-none pl-0 d-lg-block">
+                                        <li className="active">
+                                            <a href="/" className="nav-link text-left">Home</a>
+                                        </li>
+                                        <li>
+                                            <a href="/precedings" className="nav-link text-left">Precedings</a>
+                                        </li>
+                                        <li>
+                                            <a href="projects" className="nav-link text-left">Projects</a>
+                                        </li>
+                                        <li>
+                                        <Link href="/contact"><a className="nav-link text-left">Contact us</a></Link>
+                                        </li>
+                                    </ul>                                                                                                                                                                                                                                                                                         
                                 </nav>
                             </div>                
                         </div>

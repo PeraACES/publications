@@ -7,7 +7,7 @@ export default function TopBar() {
                 <div className="row align-items-center">
                     <div className="col-12 col-lg-6 d-flex">
                         <a href="index.html" className="site-logo">
-                        Meranda
+                        Escape Publications
                         </a>
 
                         <a href="#" className="ml-auto d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black"><span

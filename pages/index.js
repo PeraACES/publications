@@ -1,9 +1,12 @@
-//import HeroSlider from "../components/HeroSlider/HeroSlider";
-//import ShopCategories from "../components/ShopCategories/ShopCategories.container";
-//import FeaturedProducts from "../components/FeaturedProducts/FeaturedProducts";
+import Link from 'next/link'
+import Section1 from '../components/Layout/components/Section1/Section1';
+import Section2 from '../components/Layout/components/Section2/Section2';
 
 export default function Home() {
   return (
-    <div></div>
+    <>
+      <Section1 />
+      <Section2 />
+    </>
   );
 }
