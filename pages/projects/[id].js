@@ -1,6 +1,7 @@
 export async function getStaticPaths() {
     const res = await fetch('http://localhost:1337/projects');
     const data = await res.json();
+
     const paths = data.map(project => {
         return {
             params: {id: project.id.toString()}
