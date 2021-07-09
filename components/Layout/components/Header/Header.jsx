@@ -20,7 +20,7 @@ export default function Header() {
                                             <a href="/precedings" className="nav-link text-left">Precedings</a>
                                         </li>
                                         <li>
-                                            <a href="projects" className="nav-link text-left">Projects</a>
+                                            <a href="/projects" className="nav-link text-left">Projects</a>
                                         </li>
                                         <li>
                                         <Link href="/contact"><a className="nav-link text-left">Contact us</a></Link>

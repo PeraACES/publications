@@ -1,134 +1,83 @@
-import React, { Component } from 'react'
 import fetch from 'isomorphic-fetch'
-import Image from 'next/image'
+import Link from 'next/link'
 
-export default class Projects extends Component {
-    constructor(){
-        super();
-        this.state = {
-            projects: []
-        }
+const Projects = ({projects, error}) => {
+
+    if (error) {
+        return <div>An error occured: {error.message}</div>;
     }
 
-    componentWillMount(){
-        fetch('http://localhost:1337/projects').then((response)=>{
-            if(response.status >= 400){
-                throw new Error("Bad Response From Server");
-            }
-            return response.json();
-        }).then((projects) => {
-            this.setState({projects: projects});
-            console.log(projects)
-        });
-    }
-
-    render() {
-        return (           
-            <div className="container">
-                <div className="row">
-                    <div className="col-lg-12">
-                        <div className="section-title">
-                            <span className="caption d-block small">Categories</span>
-                            <h2>Politics</h2>
-                        </div>
-                        {
-                            this.state.projects.map(({id, ProjectName, Abstract, ProjectImage }) => (
-                                <div key={id} className="post-entry-2 d-flex">
-                                    {/* <div className="thumbnail order-md-2" style="background-image: url('images/img_h_4.jpg')"></div> */}
-                                    <img  width="100%" height="100%"  src={`http://localhost:1337${ProjectImage.url}`} alt="Image" className="thumbnail order-md-2" />
-                                    <div className="contents order-md-1 pl-0">
-                                        <h2><a href="blog-single.html">{ProjectName}</a></h2>
-                                        <p className="mb-3">{Abstract}</p>
-                                        <div className="row">
-                                            <div className="col-12">
-                                                <input type="submit" value="View More" className="btn-2 btn-primary py-2 px-8" />
-                                            </div>
+    return (           
+        <div className="container">
+            <div className="row">
+                <div className="col-lg-12">
+                    <div className="section-title">
+                        <span className="caption d-block small">Categories</span>
+                        <h2>Projects</h2>
+                    </div>
+                    {
+                        projects.map((projects) => (
+                            <div key={projects.id} className="post-entry-2 d-flex">
+                                
+                                <img  width="100%" height="100%"  src={`http://localhost:1337${projects.ProjectImage.url}`} alt="Image" className="thumbnail order-md-2" />
+                                <div className="contents order-md-1 pl-0">
+                                    <h2><a href="blog-single.html">{projects.ProjectName}</a></h2>
+                                    <p className="mb-3">{projects.Abstract}</p>
+                                    <div className="row">
+                                        <div className="col-12">
+                                        <Link href={'/projects/' + projects.id}><input type="submit" value="View More" className="btn-2 btn-primary py-2 px-8" /></Link>
                                         </div>
                                     </div>
                                 </div>
-                            ))
-                        }
-                        {/* <div className="post-entry-2 d-flex">
-                            
-                            <img src="images/img_h_3.jpg" alt="Image" className="thumbnail order-md-2" />
-                            <div className="contents order-md-1 pl-0">
-                                <h2><a href="blog-single.html">{ProjectName}</a></h2>
-                                <p className="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi temporibus praesentium neque, voluptatum quam quibusdam.</p>
-                                <div className="row">
-                                    <div className="col-12">
-                                        <input type="submit" value="View More" className="btn-2 btn-primary py-2 px-8" />
-                                    </div>
-                                </div>
                             </div>
-                        </div>
-
-                        <div className="post-entry-2 d-flex">
-                            {/* <div className="thumbnail order-md-2" style="background-image: url('images/img_h_1.jpg')"></div> 
-                            <img src="images/img_h_1.jpg" alt="Image" className="thumbnail order-md-2" />
-                            <div className="contents order-md-1 pl-0">               
-                                <h2><a href="blog-single.html">News Needs to Meet Its Audiences Where They Are</a></h2>
-                                <p className="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi temporibus praesentium neque, voluptatum quam quibusdam.</p>
-                                <div className="row">
-                                    <div className="col-12">
-                                        <input type="submit" value="View More" className="btn-2 btn-primary py-2 px-8" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="post-entry-2 d-flex">
-                            {/* <div className="thumbnail order-md-2" style="background-image: url('images/img_h_4.jpg')"></div> 
-                            <img src="images/img_h_4.jpg" alt="Image" className="thumbnail order-md-2" />
-                            <div className="contents order-md-1 pl-0">
-                                <h2><a href="blog-single.html">News Needs to Meet Its Audiences Where They Are</a></h2>
-                                <p className="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi temporibus praesentium neque, voluptatum quam quibusdam.</p>
-                                <div className="row">
-                                    <div className="col-12">
-                                        <input type="submit" value="View More" className="btn-2 btn-primary py-2 px-8" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="post-entry-2 d-flex">
-                            {/* <div className="thumbnail order-md-2" style="background-image: url('images/img_h_3.jpg')"></div> 
-                            <img src="images/img_h_3.jpg" alt="Image" className="thumbnail order-md-2" />
-                            <div className="contents order-md-1 pl-0">
-                                <h2><a href="blog-single.html">News Needs to Meet Its Audiences Where They Are</a></h2>
-                                <p className="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi temporibus praesentium neque, voluptatum quam quibusdam.</p>
-                                <div className="row">
-                                    <div className="col-12">
-                                        <input type="submit" value="View More" className="btn-2 btn-primary py-2 px-8" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="post-entry-2 d-flex">
-                            {/* <div className="thumbnail order-md-2" style="background-image: url('images/img_h_1.jpg')"></div> 
-                            <img src="images/img_h_1.jpg" alt="Image" className="thumbnail order-md-2" />
-                            <div className="contents order-md-1 pl-0">
-                                <h2><a href="blog-single.html">News Needs to Meet Its Audiences Where They Are</a></h2>
-                                <p className="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi temporibus praesentium neque, voluptatum quam quibusdam.</p>
-                                <div className="row">
-                                    <div className="col-12">
-                                        <input type="submit" value="View More" className="btn-2 btn-primary py-2 px-8" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div> */}
-                        <div className="row">
-                            <div className="col-lg-6">
-                                <ul className="custom-pagination list-unstyled">
-                                <li><a href="#">1</a></li>
-                                <li className="active">2</li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                </ul>
-                            </div>
+                        ))
+                    }
+                    <div className="row">
+                        <div className="col-lg-6">
+                            <ul className="custom-pagination list-unstyled">
+                            <li><a href="#">1</a></li>
+                            <li className="active">2</li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
-        )
-    }
+        </div>
+    ) 
 }
+
+Projects.getInitialProps = async ctx => {
+    try {
+        // Parses the JSON returned by a network request
+        const parseJSON = resp => (resp.json ? resp.json() : resp);
+        // Checks if a network request came back fine, and throws an error if not
+        const checkStatus = resp => {
+            if (resp.status >= 200 && resp.status < 300) {
+                return resp;
+            }
+    
+            return parseJSON(resp).then(resp => {
+                throw resp;
+            });
+        };
+    
+        const headers = {
+            'Content-Type': 'application/json',
+        };
+    
+        const projects = await fetch('http://localhost:1337/projects', {
+            method: 'GET',
+            headers,
+        })
+            .then(checkStatus)
+            .then(parseJSON);
+    
+        return { projects };
+    } catch (error) {
+        return { error };
+    }
+};
+
+export default Projects;
