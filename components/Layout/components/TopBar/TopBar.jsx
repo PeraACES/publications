@@ -16,9 +16,14 @@ export default function TopBar() {
 
                     </div>
                     <div className="col-12 col-lg-6 ml-auto d-flex">
+                        <div class="ml-md-auto top-social d-none d-lg-inline-block">
+                            <a href="#" class="d-inline-block p-3"><span class="icon-facebook"></span></a>
+                            <a href="#" class="d-inline-block p-3"><span class="icon-twitter"></span></a>
+                            <a href="#" class="d-inline-block p-3"><span class="icon-instagram"></span></a>
+                        </div>
                         <form action="#" className="search-form d-inline-block">
                             <div className="d-flex">
-                                <input type="email" className="form-control" placeholder="Search..." />
+                                <input type="text" className="form-control" placeholder="Search..." />
                                 <button type="submit" className="btn btn-secondary" ><span className="icon-search"></span></button>
                             </div>
                         </form>    
