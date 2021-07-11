@@ -1311,3 +1311,8 @@ h1, h2, h3, h4, h5,
 
 .single-content {
   font-size: .9rem; }
+
+.icon-facebook, .icon-linkedin, .icon-dribbble  {
+  font-size: 20px;
+  padding-right: 10px;
+}

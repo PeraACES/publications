@@ -6,7 +6,7 @@ export default function TopBar() {
             <div className="container">
                 <div className="row align-items-center">
                     <div className="col-12 col-lg-6 d-flex">
-                    <img src="images/aces_logo.jpg" alt="Image" className="escape-logo" />
+                    <img src="images/escape_logo.jpeg" alt="Image" className="escape-logo" />
                         <a href="index.html" className="site-logo">
                         ESCaPe Publications
                         </a>
@@ -17,9 +17,11 @@ export default function TopBar() {
                     </div>
                     <div className="col-12 col-lg-6 ml-auto d-flex">
                         <div class="ml-md-auto top-social d-none d-lg-inline-block">
-                            <a href="#" class="d-inline-block p-3"><span class="icon-facebook"></span></a>
-                            <a href="#" class="d-inline-block p-3"><span class="icon-twitter"></span></a>
-                            <a href="#" class="d-inline-block p-3"><span class="icon-instagram"></span></a>
+                            <a href="https://www.facebook.com/aces.symposium/" target="_blank" class="d-inline-block p-3"><span class="icon-facebook"></span></a>
+                            <a href="https://www.linkedin.com/company/aces-association-of-computer-engineering-students/" target="_blank" class="d-inline-block p-3"><span class="icon-linkedin"></span></a>
+                            <a href="http://aces.ce.pdn.ac.lk/" target="_blank" class="d-inline-block p-3"><span class="icon-dribbble"></span></a>
+                            {/* <a href="#" class="d-inline-block p-3"><span class="icon-twitter"></span></a>
+                            <a href="#" class="d-inline-block p-3"><span class="icon-instagram"></span></a> */}
                         </div>
                         <form action="#" className="search-form d-inline-block">
                             <div className="d-flex">

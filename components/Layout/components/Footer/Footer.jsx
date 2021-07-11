@@ -10,12 +10,12 @@ export default function Footer() {
                     <h2>Newsletter Subcribe</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis aspernatur ut at quae omnis pariatur obcaecati possimus nisi ea iste!</p>
                 </div> */}
-                <div className="col-md-6 ml-auto">
+                {/* <div className="col-md-6 ml-auto">
                     <div className="d-flex">
                         <input type="email" className="form-control" placeholder="Enter your email" />
                         <button type="submit" className="btn btn-secondary" ><span className="icon-paper-plane"></span></button>
                     </div>
-                </div>
+                </div> */}
                 </form>
             </div>
         </div>
@@ -25,7 +25,7 @@ export default function Footer() {
                 <div className="col-12">
                     <div className="copyright">
                         <p>
-                            Copyright &copy; Department of Computer Engineering University of Peradeniya | All rights reserved
+                            Copyright &copy; 2021 ACES, Association of Computer Engineering Students, University of Peradeniya   |   All rights reserved.
                         </p>
                     </div>
                 </div>
