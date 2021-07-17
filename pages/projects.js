@@ -1,3 +1,4 @@
+
 import fetch from 'isomorphic-fetch'
 import Link from 'next/link'
 
@@ -12,14 +13,14 @@ const Projects = ({projects, error}) => {
             <div className="row">
                 <div className="col-lg-12">
                     <div className="section-title">
-                        <span className="caption d-block small">Categories</span>
-                        <h2>Projects</h2>
+                        {/* <span className="caption d-block small">Categories</span>
+                        <h2>Projects</h2> */}
                     </div>
                     {
                         projects.map((projects) => (
                             <div key={projects.id} className="post-entry-2 d-flex">
                                 
-                                <img  width="100%" height="100%"  src={`http://localhost:1337${projects.ProjectImage.url}`} alt="Image" className="thumbnail order-md-2" />
+                                <img  width="100%" height="100%"  src={`https://aces-admin.herokuapp.com/projects${projects.ProjectImage}`} alt="Image" className="thumbnail order-md-2" />  
                                 <div className="contents order-md-1 pl-0">
                                     <h2><a href="blog-single.html">{projects.ProjectName}</a></h2>
                                     <p className="mb-3">{projects.Abstract}</p>
@@ -67,7 +68,7 @@ Projects.getInitialProps = async ctx => {
             'Content-Type': 'application/json',
         };
     
-        const projects = await fetch('http://localhost:1337/projects', {
+        const projects = await fetch('https://aces-admin.herokuapp.com/projects', {
             method: 'GET',
             headers,
         })

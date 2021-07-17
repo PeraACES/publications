@@ -7,7 +7,7 @@ body {
   color: gray;
   font-weight: 300;
   font-size: .9rem; }
-  <title>ESCaPe &mdash; Online Project Symposium 2021</title>
+  
 ::-moz-selection {
   background: #000;
   color: #fff; }
@@ -219,8 +219,8 @@ h1, h2, h3, h4, h5,
 
 /* Navbar */
 .escape-logo{
-  height: 50px;
-  width: 50px;
+  height: 80px;
+  width: 80px;
 }
 
 .site-logo {
@@ -1315,4 +1315,8 @@ h1, h2, h3, h4, h5,
 .icon-facebook, .icon-linkedin, .icon-dribbble  {
   font-size: 20px;
   padding-right: 10px;
+}
+
+.section-title{
+  margin-top: 50px;
 }
