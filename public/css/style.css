@@ -801,9 +801,10 @@ h1, h2, h3, h4, h5,
   color: #000;
   margin-bottom: 50px; }
   .section-title h2 {
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 400;
-    border-bottom: 1px solid #222;
+    margin-top: 20px;
+    margin-bottom: 20px;
     position: relative;
     display: inline-block; }
     .section-title h2:before {
@@ -811,6 +812,13 @@ h1, h2, h3, h4, h5,
       content: "";
       height: 1px;
       background: #777; }
+  .section-title h3 {
+    font-size: 25px;
+    font-weight: 400;
+    margin-top: 10px;
+    position: relative;
+    display: inline-block;
+  }
 
 .section-subtitle {
   font-weight: 300;
@@ -1317,6 +1325,5 @@ h1, h2, h3, h4, h5,
   padding-right: 10px;
 }
 
-.section-title{
-  margin-top: 50px;
-}
+
+
