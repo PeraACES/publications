@@ -1,6 +1,7 @@
 
 import fetch from 'isomorphic-fetch'
 import Link from 'next/link'
+import { API_URL } from '../config';
 
 const Projects = ({projects, error}) => {
     //console.log(projects);
@@ -73,7 +74,7 @@ Projects.getInitialProps = async ctx => {
             'Content-Type': 'application/json',
         };
     
-        const projects = await fetch('https://aces-admin.herokuapp.com/projects', {
+        const projects = await fetch(API_URL+'/projects', {
             method: 'GET',
             headers,
         })

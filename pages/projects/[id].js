@@ -1,7 +1,8 @@
 import Link from 'next/link'
+import { API_URL } from '../../config';
 
 export async function getStaticPaths() {
-    const res = await fetch('https://aces-admin.herokuapp.com/projects');
+    const res = await fetch(API_URL+'/projects');
     const data = await res.json();
 
     const paths = data.map(project => {
@@ -19,7 +20,7 @@ export async function getStaticPaths() {
 export const getStaticProps = async (context) => {
     const id = context.params.id;
 
-    const project = await fetch(`https://aces-admin.herokuapp.com/projects/${id}`);
+    const project = await fetch(API_URL+`/projects/${id}`);
     const projectData = await project.json();
 
     return {

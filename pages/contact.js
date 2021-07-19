@@ -1,6 +1,7 @@
 
 import React from 'react'
 import fetch from 'isomorphic-fetch'
+import { API_URL } from '../config';
 
 const Contact = ({contact_pages, error}) => {
         if (error) {
@@ -93,7 +94,7 @@ const Contact = ({contact_pages, error}) => {
                 'Content-Type': 'application/json',
             };
         
-            const contact_pages = await fetch('https://aces-admin.herokuapp.com/contact-page', {
+            const contact_pages = await fetch(API_URL+'/contact-page', {
                 method: 'GET',
                 headers,
             })

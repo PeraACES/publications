@@ -1,6 +1,7 @@
 
 import fetch from 'isomorphic-fetch'
 import Link from 'next/link'
+import { API_URL } from '../config';
 
 const Precedings = ({proceedings, error}) => {
     
@@ -21,7 +22,7 @@ const Precedings = ({proceedings, error}) => {
                         proceedings.map((proceedings) => (
                             <div key={proceedings.id} className="post-entry-2 d-flex">
                                 
-                                {/* <img width="100%" height="100%"  src={`https://aces-admin.herokuapp.com/proceedings${proceedings.image.url}`} alt="Image" className="thumbnail order-md-2" />  */}
+                                <img width="100%" height="100%"  src={`${proceedings.image.url}`} alt="Image" className="thumbnail order-md-2" /> 
                                 <div className="contents order-md-1 pl-0">
                                     <h2><a href="blog-single.html">{proceedings.title}</a></h2>
                                     <h3 className="mb-3">{proceedings.subtitle}</h3>
@@ -70,7 +71,7 @@ Precedings.getInitialProps = async ctx => {
             'Content-Type': 'application/json',
         };
     
-        const proceedings = await fetch('https://aces-admin.herokuapp.com/proceedings', {
+        const proceedings = await fetch(API_URL+'/proceedings', {
             method: 'GET',
             headers,
         })

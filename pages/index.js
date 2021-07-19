@@ -12,6 +12,7 @@
 // }
 
 import React from 'react'
+import { API_URL } from '../config';
 
 const Home = ({home_pages, error}) => {
   // console.log("hello")
@@ -87,7 +88,7 @@ Home.getInitialProps = async ctx => {
           'Content-Type': 'application/json',
       };
   
-      const home_pages = await fetch('https://aces-admin.herokuapp.com/home-page', {
+      const home_pages = await fetch(API_URL+'/home-page', {
           method: 'GET',
           headers,
       })
