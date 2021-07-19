@@ -6,7 +6,7 @@ export default function TopBar() {
             <div className="container">
                 <div className="row align-items-center">
                     <div className="col-12 col-lg-6 d-flex">
-                    <img src="images/escape_logo.jpeg" alt="Image" className="escape-logo" />
+                    <img src="images/aces_logo.jpg" alt="Image" className="escape-logo" />
                         <a href="index.html" className="site-logo">
                         ESCaPe Publications
                         </a>

@@ -104,7 +104,7 @@ export default function Section5() {
           </div>
         </div>
 
-        <div className="row">
+        {/* <div className="row">
           <div className="col-lg-6">
             <ul className="custom-pagination list-unstyled">
               <li><a href="#">1</a></li>
@@ -113,7 +113,7 @@ export default function Section5() {
               <li><a href="#">4</a></li>
             </ul>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
     )

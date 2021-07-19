@@ -3,7 +3,8 @@ import fetch from 'isomorphic-fetch'
 import Link from 'next/link'
 
 const Precedings = ({proceedings, error}) => {
-
+    
+    //console.log(proceedings)
     if (error) {
         return <div>An error occured: {error.message}</div>;
     }
@@ -20,21 +21,21 @@ const Precedings = ({proceedings, error}) => {
                         proceedings.map((proceedings) => (
                             <div key={proceedings.id} className="post-entry-2 d-flex">
                                 
-                                <img width="100%" height="100%"  src={`https://aces-admin.herokuapp.com/proceedings${proceedings.image.url}`} alt="Image" className="thumbnail order-md-2" /> 
+                                {/* <img width="100%" height="100%"  src={`https://aces-admin.herokuapp.com/proceedings${proceedings.image.url}`} alt="Image" className="thumbnail order-md-2" />  */}
                                 <div className="contents order-md-1 pl-0">
                                     <h2><a href="blog-single.html">{proceedings.title}</a></h2>
                                     <h3 className="mb-3">{proceedings.subtitle}</h3>
                                     <p className="mb-3">{proceedings.markup}</p>
                                     <div className="row">
                                         <div className="col-12">
-                                        <Link href={'/projects/' + proceedings.id}><input type="submit" value="View More" className="btn-2 btn-primary py-2 px-8" /></Link>
+                                        <Link href={'/proceedings/' + proceedings.id}><input type="submit" value="View More" className="btn-2 btn-primary py-2 px-8" /></Link>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         ))
                     }
-                    <div className="row">
+                    {/* <div className="row">
                         <div className="col-lg-6">
                             <ul className="custom-pagination list-unstyled">
                             <li><a href="#">1</a></li>
@@ -43,7 +44,7 @@ const Precedings = ({proceedings, error}) => {
                             <li><a href="#">4</a></li>
                             </ul>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>

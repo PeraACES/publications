@@ -22,16 +22,16 @@ export default function Header() {
                                 <nav className="site-navigation position-relative text-right" role="navigation">
                                     <ul className="site-menu main-menu js-clone-nav mr-auto d-none pl-0 d-lg-block">
                                         <li className="active">
-                                            <a href="/" className="nav-link text-left">Home</a>
+                                            <a href="/" className="nav-link text-left">HOME</a>
                                         </li>
                                         <li>
-                                            <a href="/precedings" className="nav-link text-left">Precedings</a>
+                                            <a href="/precedings" className="nav-link text-left">PRECEDINGS</a>
                                         </li>
                                         <li>
-                                            <a href="/projects" className="nav-link text-left">Projects</a>
+                                            <a href="/projects" className="nav-link text-left">PROJECTS</a>
                                         </li>
                                         <li>
-                                        <Link href="/contact"><a className="nav-link text-left">Contact us</a></Link>
+                                        <Link href="/contact"><a className="nav-link text-left">CONTACT</a></Link>
                                         </li>
                                     </ul>                                                                                                                                                                                                                                                                                         
                                 </nav>
