@@ -16,17 +16,11 @@ export default function CardProjectEntry({ id, abstract, name, image, createdAt 
           </h2>
         )}
         {!!abstract && (
-          <TextTruncate
-            line={4}
-            element="p"
-            truncateText="..."
-            text={abstract}
-            textTruncateChild={
-              <Link href={`/projects/${id}`}>
-                <a>View</a>
-              </Link>
-            }
-          />
+          <Link href={`/projects/${id}`}>
+            <a>
+              <TextTruncate line={4} element="p" truncateText="..." text={abstract} />
+            </a>
+          </Link>
         )}
         <div className="post-meta">
           <span className="date-read">{moment(createdAt).fromNow()}</span>
