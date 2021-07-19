@@ -11,7 +11,7 @@ export default function ListProjectEntry({ id, abstract, name, image, createdAt 
           style={{ backgroundImage: `url(${image.url})` }}
         ></div>
       )}
-      <div className="contents order-md-1 pl-0">
+      <div className="contents order-md-1 pl-4">
         {!!name && (
           <h2>
             <Link href={`/projects/${id}`}>

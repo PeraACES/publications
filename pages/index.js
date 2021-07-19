@@ -1,22 +1,55 @@
 import Link from 'next/link';
+import React from 'react';
+import ReactMarkdown from 'react-markdown';
 import CardProjectEntry from '../components/Projects/CardProjectEntry';
 import ListProjectEntry from '../components/Projects/ListProjectEntry';
 import SmallProjectEntry from '../components/Projects/SmallProjectEntry';
 import { API_URL } from '../config';
 
 const Home = ({ home_page, error }) => {
-  // console.log("hello")
   const { featured_proceedings, featured_projects, recent_projects, header, body } =
     home_page;
 
   const featuredProject = featured_projects[0];
   const featuredProjects = featured_projects.slice(1);
-  console.log(!!featuredProjects && Array.isArray(featuredProjects));
+
   if (error) {
     return <div>An error occured: {error.message}</div>;
   }
+
   return (
     <>
+      <div class="site-section" style={{ paddingBottom: '1rem' }}>
+        <div class="container">
+          <div class="row">
+            <div class="col text-left">
+              {!!header.title && (
+                <div class="section-title" style={{ marginBottom: '10px' }}>
+                  <h2>{header.title}</h2>
+                </div>
+              )}
+              {!!header.subtitle && (
+                <div class="text-black">
+                  <h5>{header.subtitle}</h5>
+                </div>
+              )}
+            </div>
+          </div>
+          <div className="row">
+            <div class="col text-center py-5">
+              {!!header.button &&
+                Array.isArray(header.button) &&
+                header.button.map((item) => (
+                  <Link href={item.link}>
+                    <a class={`btn btn-${item.color} mr-4`} role="button">
+                      {item.title}
+                    </a>
+                  </Link>
+                ))}
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="site-section py-0" id="section1">
         <div className="owl-carousel hero-slide owl-style">
           <div className="site-section">
@@ -24,16 +57,16 @@ const Home = ({ home_page, error }) => {
               <div className="half-post-entry d-block d-lg-flex bg-light">
                 {/* <a href="post-single.html"><img src={home_page.featured_proceedings[0].image.url} alt="Image" className="img-bg" /></a> */}
                 <div className="contents">
-                  <span className="caption">{home_page.body[0].subtitle}</span>
+                  <span className="caption">{body[0].subtitle}</span>
                   <h2>
-                    <a href="blog-single.html">{home_page.body[0].title}</a>
+                    <a href="blog-single.html">{body[0].title}</a>
                   </h2>
-                  <p className="mb-3">{home_page.body[0].content}</p>
+                  <p className="mb-3">{body[0].content}</p>
                   <a href="https://aces.ce.pdn.ac.lk/">
-                    <button>{home_page.body[0].buttons[0].title}</button>
+                    <button>{body[0].buttons[0].title}</button>
                   </a>
                   <a href="https://aces.ce.pdn.ac.lk/escape/">
-                    <button>{home_page.body[0].buttons[1].title}</button>
+                    <button>{body[0].buttons[1].title}</button>
                   </a>
                 </div>
               </div>
@@ -45,7 +78,7 @@ const Home = ({ home_page, error }) => {
                 {/* <div className="img-bg" style={{backgroundImage: `url(require('images/big_img_1.jpg'))`}}></div> */}
                 <a href="post-single.html">
                   <img
-                    src={home_page.featured_proceedings[0].image.url}
+                    src={home_page.featured_proceedings[0].image.formats.small.url}
                     alt="Image"
                     className="img-bg"
                   />
@@ -59,7 +92,9 @@ const Home = ({ home_page, error }) => {
                       {home_page.featured_proceedings[0].title}
                     </a>
                   </h2>
-                  <p className="mb-3">{home_page.featured_proceedings[0].markup}</p>
+                  <ReactMarkdown>
+                    {home_page.featured_proceedings[0].markup}
+                  </ReactMarkdown>
                 </div>
               </div>
             </div>
@@ -70,7 +105,7 @@ const Home = ({ home_page, error }) => {
                 {/* <div className="img-bg" style={{backgroundImage: `url(require('images/big_img_1.jpg'))`}}></div> */}
                 <a href="post-single.html">
                   <img
-                    src={home_page.featured_proceedings[1].image.url}
+                    src={home_page.featured_proceedings[1].image.formats.small.url}
                     alt="Image"
                     className="img-bg"
                   />
@@ -84,7 +119,9 @@ const Home = ({ home_page, error }) => {
                       {home_page.featured_proceedings[1].title}
                     </a>
                   </h2>
-                  <p className="mb-3">{home_page.featured_proceedings[1].markup}</p>
+                  <ReactMarkdown>
+                    {home_page.featured_proceedings[0].markup}
+                  </ReactMarkdown>
                 </div>
               </div>
             </div>
