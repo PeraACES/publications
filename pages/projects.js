@@ -60,7 +60,7 @@ const Projects = ({ projects, error }) => {
   );
 };
 
-Projects.getInitialProps = async (ctx) => {
+export async function getStaticProps() {
   try {
     // Parses the JSON returned by a network request
     const parseJSON = (resp) => (resp.json ? resp.json() : resp);
@@ -86,10 +86,10 @@ Projects.getInitialProps = async (ctx) => {
       .then(checkStatus)
       .then(parseJSON);
 
-    return { projects };
+    return { props: { projects } };
   } catch (error) {
     return { error };
   }
-};
+}
 
 export default Projects;

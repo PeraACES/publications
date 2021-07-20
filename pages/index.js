@@ -19,29 +19,29 @@ const Home = ({ home_page, error }) => {
 
   return (
     <>
-      <div class="site-section" style={{ paddingBottom: '1rem' }}>
-        <div class="container">
-          <div class="row">
-            <div class="col text-left">
+      <div className="site-section" style={{ paddingBottom: '1rem' }}>
+        <div className="container">
+          <div className="row">
+            <div className="col text-left">
               {!!header.title && (
-                <div class="section-title" style={{ marginBottom: '10px' }}>
+                <div className="section-title" style={{ marginBottom: '10px' }}>
                   <h2>{header.title}</h2>
                 </div>
               )}
               {!!header.subtitle && (
-                <div class="text-black">
+                <div className="text-black">
                   <h5>{header.subtitle}</h5>
                 </div>
               )}
             </div>
           </div>
           <div className="row">
-            <div class="col text-center py-5">
+            <div className="col text-center py-5">
               {!!header.button &&
                 Array.isArray(header.button) &&
                 header.button.map((item) => (
-                  <Link href={item.link}>
-                    <a class={`btn btn-${item.color} mr-4`} role="button">
+                  <Link href={item.link} key={item.title}>
+                    <a className={`btn btn-${item.color} mr-4`} role="button">
                       {item.title}
                     </a>
                   </Link>
@@ -52,26 +52,6 @@ const Home = ({ home_page, error }) => {
       </div>
       <div className="site-section py-0" id="section1">
         <div className="owl-carousel hero-slide owl-style">
-          <div className="site-section">
-            <div className="container">
-              <div className="half-post-entry d-block d-lg-flex bg-light">
-                {/* <a href="post-single.html"><img src={home_page.featured_proceedings[0].image.url} alt="Image" className="img-bg" /></a> */}
-                <div className="contents">
-                  <span className="caption">{body[0].subtitle}</span>
-                  <h2>
-                    <a href="blog-single.html">{body[0].title}</a>
-                  </h2>
-                  <p className="mb-3">{body[0].content}</p>
-                  <a href="https://aces.ce.pdn.ac.lk/">
-                    <button>{body[0].buttons[0].title}</button>
-                  </a>
-                  <a href="https://aces.ce.pdn.ac.lk/escape/">
-                    <button>{body[0].buttons[1].title}</button>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
           <div className="site-section">
             <div className="container">
               <div className="half-post-entry d-block d-lg-flex bg-light">
@@ -128,21 +108,22 @@ const Home = ({ home_page, error }) => {
           </div>
         </div>
       </div>
-      <div class="site-section">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-8">
-              <div class="row">
-                <div class="col-12">
-                  <div class="section-title">
+      <div className="site-section">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-8">
+              <div className="row">
+                <div className="col-12">
+                  <div className="section-title">
                     <h2>Featured Projects</h2>
                   </div>
                 </div>
               </div>
-              <div class="row">
-                <div class="col-md-6">
+              <div className="row">
+                <div className="col-md-6">
                   {!!featuredProject && (
                     <CardProjectEntry
+                      key={featuredProject.id}
                       id={featuredProject.id}
                       abstract={featuredProject.Abstract}
                       name={featuredProject.ProjectName}
@@ -151,11 +132,12 @@ const Home = ({ home_page, error }) => {
                     />
                   )}
                 </div>
-                <div class="col-md-6">
+                <div className="col-md-6">
                   {!!featuredProjects &&
                     Array.isArray(featuredProjects) &&
                     featuredProjects.map((item) => (
                       <SmallProjectEntry
+                        key={item.id}
                         id={item.id}
                         abstract={item.Abstract}
                         name={item.ProjectName}
@@ -165,22 +147,24 @@ const Home = ({ home_page, error }) => {
                     ))}
                   <p>
                     <Link href="/projects">
-                      <a class="more">
-                        See All Projects <span class="icon-keyboard_arrow_right"></span>
+                      <a className="more">
+                        See All Projects{' '}
+                        <span className="icon-keyboard_arrow_right"></span>
                       </a>
                     </Link>
                   </p>
                 </div>
               </div>
             </div>
-            <div class="col-lg-4">
-              <div class="section-title">
+            <div className="col-lg-4">
+              <div className="section-title">
                 <h2>Recent Projects</h2>
               </div>
               {!!recent_projects &&
                 Array.isArray(recent_projects) &&
                 recent_projects.map((item) => (
                   <ListProjectEntry
+                    key={item.id}
                     id={item.id}
                     abstract={item.Abstract}
                     name={item.ProjectName}
@@ -190,8 +174,8 @@ const Home = ({ home_page, error }) => {
                 ))}
               <p>
                 <Link href="/projects">
-                  <a class="more">
-                    See All Projects <span class="icon-keyboard_arrow_right"></span>
+                  <a className="more">
+                    See All Projects <span className="icon-keyboard_arrow_right"></span>
                   </a>
                 </Link>
               </p>
@@ -203,7 +187,7 @@ const Home = ({ home_page, error }) => {
   );
 };
 
-Home.getInitialProps = async (ctx) => {
+export async function getStaticProps() {
   try {
     // Parses the JSON returned by a network request
     const parseJSON = (resp) => (resp.json ? resp.json() : resp);
@@ -228,11 +212,11 @@ Home.getInitialProps = async (ctx) => {
     })
       .then(checkStatus)
       .then(parseJSON);
-    console.log(home_page);
-    return { home_page };
+    // console.log(home_page);
+    return { props: { home_page } };
   } catch (error) {
     return { error };
   }
-};
+}
 
 export default Home;
