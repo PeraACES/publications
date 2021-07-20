@@ -1,4 +1,4 @@
-import React from 'react';
+import Link from 'next/link';
 
 export default function TopBar() {
   return (
@@ -6,11 +6,12 @@ export default function TopBar() {
       <div className="container">
         <div className="row align-items-center">
           <div className="col-12 col-lg-6 d-flex">
-            <img src="images/aces_logo.jpg" alt="Image" className="escape-logo" />
-            <a href="index.html" className="site-logo">
-              ESCaPe Publications
-            </a>
-
+            <Link href="/">
+              <a className="site-logo">
+                <img src="images/aces_logo.jpg" alt="Image" className="escape-logo" />
+                ESCaPe Publications
+              </a>
+            </Link>
             <a
               href="#"
               className="ml-auto d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black"
@@ -18,7 +19,7 @@ export default function TopBar() {
               <span className="icon-menu h3"></span>
             </a>
           </div>
-          <div className="col-12 col-lg-6 ml-auto d-flex">
+          {/* <div className="col-12 col-lg-6 ml-auto d-flex">
             <div className="ml-md-auto top-social d-none d-lg-inline-block">
               <a
                 href="https://www.facebook.com/aces.symposium/"
@@ -41,8 +42,6 @@ export default function TopBar() {
               >
                 <span className="icon-dribbble"></span>
               </a>
-              {/* <a href="#" className="d-inline-block p-3"><span className="icon-twitter"></span></a>
-                            <a href="#" className="d-inline-block p-3"><span className="icon-instagram"></span></a> */}
             </div>
             <form action="#" className="search-form d-inline-block">
               <div className="d-flex">
@@ -53,7 +52,7 @@ export default function TopBar() {
               </div>
             </form>
           </div>
-          <div className="col-6 d-block d-lg-none text-right"></div>
+          <div className="col-6 d-block d-lg-none text-right"></div> */}
         </div>
       </div>
     </div>
