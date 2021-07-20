@@ -2,7 +2,6 @@ import moment from 'moment';
 import Link from 'next/link';
 
 export default function SmallProjectEntry({ id, abstract, name, image, createdAt }) {
-  console.log(id, abstract, name, image.url, createdAt);
   return (
     <div className="post-entry-2 d-flex bg-light" key={id}>
       {!!image && (

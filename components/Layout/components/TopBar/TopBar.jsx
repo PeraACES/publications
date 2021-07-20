@@ -19,30 +19,30 @@ export default function TopBar() {
             </a>
           </div>
           <div className="col-12 col-lg-6 ml-auto d-flex">
-            <div class="ml-md-auto top-social d-none d-lg-inline-block">
+            <div className="ml-md-auto top-social d-none d-lg-inline-block">
               <a
                 href="https://www.facebook.com/aces.symposium/"
                 target="_blank"
-                class="d-inline-block p-3"
+                className="d-inline-block p-3"
               >
-                <span class="icon-facebook"></span>
+                <span className="icon-facebook"></span>
               </a>
               <a
                 href="https://www.linkedin.com/company/aces-association-of-computer-engineering-students/"
                 target="_blank"
-                class="d-inline-block p-3"
+                className="d-inline-block p-3"
               >
-                <span class="icon-linkedin"></span>
+                <span className="icon-linkedin"></span>
               </a>
               <a
                 href="http://aces.ce.pdn.ac.lk/"
                 target="_blank"
-                class="d-inline-block p-3"
+                className="d-inline-block p-3"
               >
-                <span class="icon-dribbble"></span>
+                <span className="icon-dribbble"></span>
               </a>
-              {/* <a href="#" class="d-inline-block p-3"><span class="icon-twitter"></span></a>
-                            <a href="#" class="d-inline-block p-3"><span class="icon-instagram"></span></a> */}
+              {/* <a href="#" className="d-inline-block p-3"><span className="icon-twitter"></span></a>
+                            <a href="#" className="d-inline-block p-3"><span className="icon-instagram"></span></a> */}
             </div>
             <form action="#" className="search-form d-inline-block">
               <div className="d-flex">

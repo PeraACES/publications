@@ -3,10 +3,9 @@ import Link from 'next/link';
 import TextTruncate from 'react-text-truncate';
 
 export default function CardProjectEntry({ id, abstract, name, image, createdAt }) {
-  console.log(id, abstract, name, image.url, createdAt);
   return (
     <div className="post-entry-1" key={id}>
-      {!!image && <img src={image.url} alt={image.caption} class="img-fluid" />}
+      {!!image && <img src={image.url} alt={image.caption} className="img-fluid" />}
       <div className="contents">
         {!!name && (
           <h2>
