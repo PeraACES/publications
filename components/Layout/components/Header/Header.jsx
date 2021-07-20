@@ -28,19 +28,19 @@ export default function Header() {
                 >
                   <ul className="site-menu main-menu js-clone-nav mr-auto d-none pl-0 d-lg-block">
                     <li className="active">
-                      <a href="/" className="nav-link text-left">
-                        HOME
-                      </a>
+                      <Link href="/">
+                        <a className="nav-link text-left">HOME</a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="/precedings" className="nav-link text-left">
-                        PRECEDINGS
-                      </a>
+                      <Link href="/precedings">
+                        <a className="nav-link text-left">PRECEDINGS</a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="/projects" className="nav-link text-left">
-                        PROJECTS
-                      </a>
+                      <Link href="/projects">
+                        <a className="nav-link text-left">PROJECTS</a>
+                      </Link>
                     </li>
                     <li>
                       <Link href="/contact">

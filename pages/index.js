@@ -1,14 +1,14 @@
 import Link from 'next/link';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
+import Carousel from '../components/Carousel/Carousel';
 import CardProjectEntry from '../components/Projects/CardProjectEntry';
 import ListProjectEntry from '../components/Projects/ListProjectEntry';
 import SmallProjectEntry from '../components/Projects/SmallProjectEntry';
 import { API_URL } from '../config';
 
-const Home = ({ home_page, error }) => {
-  const { featured_proceedings, featured_projects, recent_projects, header, body } =
-    home_page;
+const Home = ({ data, error }) => {
+  const { featured_proceedings, featured_projects, recent_projects, header, body } = data;
 
   const featuredProject = featured_projects[0];
   const featuredProjects = featured_projects.slice(1);
@@ -50,64 +50,7 @@ const Home = ({ home_page, error }) => {
           </div>
         </div>
       </div>
-      <div className="site-section py-0" id="section1">
-        <div className="owl-carousel hero-slide owl-style">
-          <div className="site-section">
-            <div className="container">
-              <div className="half-post-entry d-block d-lg-flex bg-light">
-                {/* <div className="img-bg" style={{backgroundImage: `url(require('images/big_img_1.jpg'))`}}></div> */}
-                <a href="post-single.html">
-                  <img
-                    src={home_page.featured_proceedings[0].image.formats.small.url}
-                    alt="Image"
-                    className="img-bg"
-                  />
-                </a>
-                <div className="contents">
-                  <span className="caption">
-                    {home_page.featured_proceedings[0].subtitle}
-                  </span>
-                  <h2>
-                    <a href="blog-single.html">
-                      {home_page.featured_proceedings[0].title}
-                    </a>
-                  </h2>
-                  <ReactMarkdown>
-                    {home_page.featured_proceedings[0].markup}
-                  </ReactMarkdown>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="site-section">
-            <div className="container">
-              <div className="half-post-entry d-block d-lg-flex bg-light">
-                {/* <div className="img-bg" style={{backgroundImage: `url(require('images/big_img_1.jpg'))`}}></div> */}
-                <a href="post-single.html">
-                  <img
-                    src={home_page.featured_proceedings[1].image.formats.small.url}
-                    alt="Image"
-                    className="img-bg"
-                  />
-                </a>
-                <div className="contents">
-                  <span className="caption">
-                    {home_page.featured_proceedings[1].subtitle}
-                  </span>
-                  <h2>
-                    <a href="blog-single.html">
-                      {home_page.featured_proceedings[1].title}
-                    </a>
-                  </h2>
-                  <ReactMarkdown>
-                    {home_page.featured_proceedings[0].markup}
-                  </ReactMarkdown>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Carousel featured_proceedings={data.featured_proceedings} />
       <div className="site-section">
         <div className="container">
           <div className="row">
@@ -206,14 +149,16 @@ export async function getStaticProps() {
       'Content-Type': 'application/json'
     };
 
-    const home_page = await fetch(API_URL + '/home-page', {
+    const data = await fetch(API_URL + '/home-page', {
       method: 'GET',
       headers
     })
       .then(checkStatus)
       .then(parseJSON);
-    // console.log(home_page);
-    return { props: { home_page } };
+
+    // console.log(data);
+
+    return { props: { data } };
   } catch (error) {
     return { error };
   }
