@@ -101,25 +101,25 @@ const Details = ({ project }) => {
                 <div className="post-entry-2 d-flex">
                   <div className="col-md-8">
                     <div className="post-entry-1">
-                      <Link href={project.GithubRepoLink}>
+                      <a target="_blank" href={project.GithubRepoLink} rel="noopener noreferrer">
                         <input
                           type="submit"
                           value="Github Repo"
                           className="btn-2 btn-primary py-2 px-8"
                         />
-                      </Link>
+                      </a>
                     </div>
                   </div>
 
                   <div className="col-md-8">
                     <div className="post-entry-1">
-                      <Link href={project.ProjectPortfolioLink}>
+                      <a target="_blank" href={project.ProjectPortfolioLink} rel="noopener noreferrer">
                         <input
                           type="submit"
                           value="Portfolio"
                           className="btn-2 btn-primary py-2 px-8"
                         />
-                      </Link>
+                      </a>
                     </div>
                   </div>
                 </div>
