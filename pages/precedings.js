@@ -2,6 +2,10 @@ import fetch from 'isomorphic-fetch';
 import Link from 'next/link';
 import { API_URL } from '../config';
 
+// pagination url with filters
+// /proceedings?_limit=5&_start=0 // for first 5 items
+// /proceedings?_limit=10&_start=0 // for first 10 items
+
 const Precedings = ({ proceedings, error }) => {
   //console.log(proceedings)
   if (error) {

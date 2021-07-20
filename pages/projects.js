@@ -3,6 +3,10 @@ import Link from 'next/link';
 import ListProjectEntry from '../components/Projects/ListProjectEntry';
 import { API_URL } from '../config';
 
+// pagination url with filters
+// /projects?_limit=5&_start=0 // for first 5 items
+// /projects?_limit=10&_start=0 // for first 10 items
+
 const Projects = ({ data, error }) => {
   const { projects } = data;
 
