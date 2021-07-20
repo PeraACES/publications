@@ -1,14 +1,36 @@
-import React from 'react'
-import Header from './components/Header/Header'
-import Footer from './components/Footer/Footer'
+import React from 'react';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 
 export default function Layout({ children }) {
-    return (
-        <>
-            <Header />
-            { children }
-            <Footer />
-            <div id="loader" className="show fullscreen"><svg className="circular" width="48px" height="48px"><circle className="path-bg" cx="24" cy="24" r="22" fill="none" strokeWidth="4" stroke="#eeeeee"/><circle className="path" cx="24" cy="24" r="22" fill="none" strokeWidth="4" strokeMiterlimit="10" stroke="#ff5e15"/></svg></div>
-        </>
-    )
+  return (
+    <>
+      <Header />
+      {children}
+      <Footer />
+      <div id="loader" className="show fullscreen">
+        <svg className="circular" width="48px" height="48px">
+          <circle
+            className="path-bg"
+            cx="24"
+            cy="24"
+            r="22"
+            fill="none"
+            strokeWidth="4"
+            stroke="#eeeeee"
+          />
+          <circle
+            className="path"
+            cx="24"
+            cy="24"
+            r="22"
+            fill="none"
+            strokeWidth="4"
+            strokeMiterlimit="10"
+            stroke="#ff5e15"
+          />
+        </svg>
+      </div>
+    </>
+  );
 }
