@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
 import Carousel from '../components/Carousel/Carousel';
 import CardProjectEntry from '../components/Projects/CardProjectEntry';
 import ListProjectEntry from '../components/Projects/ListProjectEntry';
@@ -21,6 +20,7 @@ const Home = ({ data, error }) => {
     <>
       <div className="site-section" style={{ paddingBottom: '1rem' }}>
         <div className="container">
+          {/* Header */}
           <div className="row">
             <div className="col text-left">
               {!!header.title && (
@@ -50,10 +50,17 @@ const Home = ({ data, error }) => {
           </div>
         </div>
       </div>
-      <Carousel featured_proceedings={data.featured_proceedings} />
+
+      {/* Carousel */}
+      <Carousel featured_proceedings={featured_proceedings} />
+
+      {/* Body */}
+      {/* <> TODO </> */}
+
       <div className="site-section">
         <div className="container">
           <div className="row">
+            {/* Featured Projects */}
             <div className="col-lg-8">
               <div className="row">
                 <div className="col-12">
@@ -99,6 +106,7 @@ const Home = ({ data, error }) => {
                 </div>
               </div>
             </div>
+            {/* Recent Projects */}
             <div className="col-lg-4">
               <div className="section-title">
                 <h2>Recent Projects</h2>
@@ -109,7 +117,7 @@ const Home = ({ data, error }) => {
                   <ListProjectEntry
                     key={item.id}
                     id={item.id}
-                    abstract={item.Abstract}
+                    // abstract={item.Abstract}
                     name={item.ProjectName}
                     image={item.ProjectImage1}
                     createdAt={item.createdAt}

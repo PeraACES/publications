@@ -1,7 +1,15 @@
 import moment from 'moment';
 import Link from 'next/link';
+import TextTruncate from 'react-text-truncate';
 
-export default function ListProjectEntry({ id, abstract, name, image, createdAt }) {
+export default function ListProjectEntry({
+  id,
+  abstract,
+  name,
+  image,
+  createdAt,
+  displayButton = false
+}) {
   return (
     <div className="post-entry-2 d-flex" key={id}>
       {!!image && (
@@ -18,9 +26,19 @@ export default function ListProjectEntry({ id, abstract, name, image, createdAt 
             </Link>
           </h2>
         )}
+        {!!abstract && (
+          <TextTruncate line={4} element="p" truncateText="..." text={abstract} />
+        )}
         <div className="post-meta">
           <span className="date-read">{moment(createdAt).fromNow()}</span>
         </div>
+        {displayButton && (
+          <Link href={`/projects/${id}`}>
+            <a className="btn btn-info mt-2" role="button">
+              View More
+            </a>
+          </Link>
+        )}
       </div>
     </div>
   );
