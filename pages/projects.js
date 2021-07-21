@@ -1,14 +1,42 @@
+// import { useEffect, useState } from 'react';
 import fetch from 'isomorphic-fetch';
-import Link from 'next/link';
+// import { useRouter, withRouter } from 'next/router';
+// import Link from 'next/link';
 import ListProjectEntry from '../components/Projects/ListProjectEntry';
 import { API_URL } from '../config';
+import { getAllProjects } from '../lib/api';
 
 // pagination url with filters
 // /projects?_limit=5&_start=0 // for first 5 items
 // /projects?_limit=10&_start=0 // for first 10 items
 
-const Projects = ({ data, error }) => {
+// const pageSize = 5;
+
+const Projects = ({ data, error, href }) => {
   const { projects } = data;
+
+  // const [page, setPage] = useState(null);
+
+  // const router = useRouter();
+  // console.log(href, router, router.query);
+  // // const { projects, count } = data;
+
+  // useEffect(() => {
+  //   const { query } = router;
+  //   console.log('router hook', query.page, !router.query.page && page === null);
+  //   if (!router.query.page && page === null) {
+  //     console.log('query.page not found');
+  //     router.query['page'] = 1;
+  //     router.push(router.pathname + '?page=1');
+  //   } else if (page === null) {
+  //     console.log('setPage', query);
+  //     setPage(query.page);
+  //   }
+  // }, [router]);
+
+  // useEffect(() => {
+  //   console.log('page', page);
+  // }, [page]);
 
   if (error) {
     return (
@@ -43,6 +71,7 @@ const Projects = ({ data, error }) => {
                 <ListProjectEntry
                   key={item.id}
                   id={item.id}
+                  slug={item.slug}
                   abstract={item.Abstract}
                   name={item.ProjectName}
                   image={item.ProjectImage1}
@@ -73,33 +102,12 @@ const Projects = ({ data, error }) => {
   );
 };
 
-export async function getStaticProps() {
+export async function getStaticProps(context) {
   try {
-    // Parses the JSON returned by a network request
-    const parseJSON = (resp) => (resp.json ? resp.json() : resp);
-    // Checks if a network request came back fine, and throws an error if not
-    const checkStatus = (resp) => {
-      if (resp.status >= 200 && resp.status < 300) {
-        return resp;
-      }
-
-      return parseJSON(resp).then((resp) => {
-        throw resp;
-      });
+    const projects = await getAllProjects();
+    return {
+      props: { data: { projects } }
     };
-
-    const headers = {
-      'Content-Type': 'application/json'
-    };
-
-    const projects = await fetch(API_URL + '/projects', {
-      method: 'GET',
-      headers
-    })
-      .then(checkStatus)
-      .then(parseJSON);
-
-    return { props: { data: { projects } } };
   } catch (error) {
     return { error };
   }
