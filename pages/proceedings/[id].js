@@ -100,7 +100,7 @@ const Details = ({ proceedings }) => {
               <div>
                 <PDFViewer
                   document={{
-                      url: proceedings.ProceedingPDF.url,
+                      url: proceedings.ProceedingPDFUrl,
                   }}
                   navbarOnTop = {true}
                 />
