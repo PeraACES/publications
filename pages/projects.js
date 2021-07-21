@@ -12,7 +12,7 @@ import { getAllProjects } from '../lib/api';
 
 // const pageSize = 5;
 
-const Projects = ({ data, error, href }) => {
+export default function Projects({ data, error, href }) {
   const { projects } = data;
 
   // const [page, setPage] = useState(null);
@@ -100,7 +100,7 @@ const Projects = ({ data, error, href }) => {
       </div>
     </div>
   );
-};
+}
 
 export async function getStaticProps(context) {
   try {
@@ -112,5 +112,3 @@ export async function getStaticProps(context) {
     return { error };
   }
 }
-
-export default Projects;
