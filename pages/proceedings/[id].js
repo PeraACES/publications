@@ -1,4 +1,7 @@
 import { API_URL } from '../../config';
+import React from 'react';
+import PDFViewer from 'pdf-viewer-reactjs';
+
 
 export async function getStaticPaths() {
   const res = await fetch(API_URL + '/proceedings');
@@ -42,7 +45,7 @@ const Details = ({ proceedings }) => {
             <img
               width="100%"
               height="100%"
-              src={`${proceedings.image.url}`}
+              src={proceedings.image.url}
               alt="Image"
               className="thumbnail order-md-2"
             />
@@ -50,9 +53,60 @@ const Details = ({ proceedings }) => {
               <h2>
                 <a href="blog-single.html">{proceedings.title}</a>
               </h2>
-              <h3 className="mb-4">{proceedings.subtitle}</h3>
+              <h3 className="mb-4">{proceedings.Theme}</h3>
               <p className="mb-4">{proceedings.markup}</p>
+              <h2>Symposium Chair</h2>
+              <div className="col-lg-6">
+                <div className="post-entry-2 d-flex">
+                  
+                    <div className="col-md-8">
+                      <div className="post-entry-1">
+                        <img
+                          width="70"
+                          height="70"
+                          src={proceedings.SymposiumChair.SupervisorImage.url}
+                          alt="Image"
+                          className="img-fluid"
+                        />
+                        <h2>
+                          <a href="blog-single.html">{proceedings.SymposiumChair.SupervisorName}</a>
+                        </h2>
+                      </div>
+                    </div>
+                  
+                </div>
+              </div>
+              <h2>Symposium Editors</h2>
+              <div className="col-lg-6">
+                <div className="post-entry-2 d-flex">
+                  {proceedings.SymposiumEditors.map((editor) => (
+                    <div className="col-md-8">
+                      <div className="post-entry-1">
+                        <img
+                          width="70"
+                          height="70"
+                          src={editor.SupervisorImage.url}
+                          alt="Image"
+                          className="img-fluid"
+                        />
+                        <h2>
+                          <a href="blog-single.html">{editor.SupervisorName}</a>
+                        </h2>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <PDFViewer
+                  document={{
+                      url: proceedings.ProceedingPDF.url,
+                  }}
+                  navbarOnTop = {true}
+                />
+              </div>
             </div>
+            
           </div>
         </div>
       </div>

@@ -25,7 +25,7 @@ const Precedings = ({ proceedings, error }) => {
               <img
                 width="100%"
                 height="100%"
-                src={`${proceedings.image.url}`}
+                src={proceedings.image.url}
                 alt="Image"
                 className="thumbnail order-md-2"
               />
@@ -33,7 +33,7 @@ const Precedings = ({ proceedings, error }) => {
                 <h2>
                   <a href="blog-single.html">{proceedings.title}</a>
                 </h2>
-                <h3 className="mb-3">{proceedings.subtitle}</h3>
+                <h3 className="mb-3">{proceedings.Theme}</h3>
                 <p className="mb-3">{proceedings.markup}</p>
                 <div className="row">
                   <div className="col-12">
