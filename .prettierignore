@@ -1,4 +1,5 @@
 build
+out
 .next/
 **/public/
 **/node_modules/**

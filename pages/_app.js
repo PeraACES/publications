@@ -1,23 +1,16 @@
-import Head from 'next/head';
 import '../styles/globals.css';
-import Layout from '../components/Layout/Layout';
+import App from 'next/app';
 
 function MyApp({ Component, pageProps }) {
-  return (
-    <>
-      <Head>
-        <title>ESCaPe 2021 | Online Project Symposium UOP</title>
-        <meta charSet="utf-8" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
-      </Head>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </>
-  );
+  return <Component {...pageProps} />;
 }
+
+MyApp.getInitialProps = async (ctx) => {
+  // Calls page's `getInitialProps` and fills `appProps.pageProps`
+  const appProps = await App.getInitialProps(ctx);
+  // Fetch global site settings from Strapi
+  // Pass the data to our page via props
+  return { ...appProps };
+};
 
 export default MyApp;

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import Carousel from '../components/Carousel/Carousel';
+import Layout from '../components/Layout/Layout';
 import CardProjectEntry from '../components/Projects/CardProjectEntry';
 import ListProjectEntry from '../components/Projects/ListProjectEntry';
 import SmallProjectEntry from '../components/Projects/SmallProjectEntry';
@@ -8,6 +9,8 @@ import { API_URL } from '../config';
 
 const Home = ({ data, error }) => {
   const { featured_proceedings, featured_projects, recent_projects, header, body } = data;
+
+  // console.log(featured_proceedings);
 
   const featuredProject = featured_projects[0];
   const featuredProjects = featured_projects.slice(1);
@@ -17,7 +20,7 @@ const Home = ({ data, error }) => {
   }
 
   return (
-    <>
+    <Layout>
       <div className="site-section" style={{ paddingBottom: '1rem' }}>
         <div className="container">
           {/* Header */}
@@ -89,6 +92,7 @@ const Home = ({ data, error }) => {
                       <SmallProjectEntry
                         key={item.id}
                         id={item.id}
+                        slug={item.slug}
                         abstract={item.Abstract}
                         name={item.ProjectName}
                         image={item.ProjectImage1}
@@ -117,6 +121,7 @@ const Home = ({ data, error }) => {
                   <ListProjectEntry
                     key={item.id}
                     id={item.id}
+                    slug={item.slug}
                     // abstract={item.Abstract}
                     name={item.ProjectName}
                     image={item.ProjectImage1}
@@ -134,7 +139,7 @@ const Home = ({ data, error }) => {
           </div>
         </div>
       </div>
-    </>
+    </Layout>
   );
 };
 

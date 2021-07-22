@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
+import Footer from './Footer';
+import Header from './Header';
 
 export default function Layout({ children }) {
   return (
@@ -8,7 +8,7 @@ export default function Layout({ children }) {
       <Header />
       {children}
       <Footer />
-      <div id="loader" className="show fullscreen">
+      {/* <div id="loader" className="show fullscreen">
         <svg className="circular" width="48px" height="48px">
           <circle
             className="path-bg"
@@ -30,7 +30,7 @@ export default function Layout({ children }) {
             stroke="#ff5e15"
           />
         </svg>
-      </div>
+      </div> */}
     </>
   );
 }
