@@ -113,25 +113,41 @@ const Details = ({ project }) => {
               </div>
               <div></div>
             </div>
-            <div className="row">
-              <div className="col mr-5">
-                <p>
-                  <a href={project.ProjectPortfolioLink} class="more" target="_blank" rel="noreferrer">
-                    More Information<span class="icon-keyboard_arrow_right"></span>
-                  </a>
-                </p>
+            {!!project.ProjectPortfolioLink && (
+              <>
+                <div className="row">
+                  <div className="col mr-5">
+                    <p>
+                      <a
+                        href={project.ProjectPortfolioLink}
+                        class="more"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        More Information<span class="icon-keyboard_arrow_right"></span>
+                      </a>
+                    </p>
+                  </div>
+                </div>
+                <br />
+              </>
+            )}
+            {!!project.GithubRepoLink && (
+              <div className="row">
+                <div className="col">
+                  <p>
+                    <a
+                      href={project.GithubRepoLink}
+                      class="more"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      GitHub Repository <span class="icon-keyboard_arrow_right"></span>
+                    </a>
+                  </p>
+                </div>
               </div>
-            </div>
-            <br />
-            <div className="row">
-              <div className="col">
-                <p>
-                  <a href={project.GithubRepoLink} class="more" target="_blank" rel="noreferrer">
-                    GitHub Repository <span class="icon-keyboard_arrow_right"></span>
-                  </a>
-                </p>
-              </div>
-            </div>
+            )}
           </div>
         </div>
       </div>
