@@ -10,6 +10,8 @@ import { API_URL } from '../config';
 const Home = ({ data, error }) => {
   const { featured_proceedings, featured_projects, recent_projects, header, body } = data;
 
+  // console.log(featured_proceedings);
+
   const featuredProject = featured_projects[0];
   const featuredProjects = featured_projects.slice(1);
 
