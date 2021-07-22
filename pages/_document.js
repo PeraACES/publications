@@ -31,7 +31,7 @@ class MyDocument extends Document {
           <link rel="stylesheet" href="/css/bootstrap-datepicker.css" />
           <link rel="stylesheet" href="/css/aos.css" />
           <link
-            href="css/jquery.mb.YTPlayer.min.css"
+            href="/css/jquery.mb.YTPlayer.min.css"
             media="all"
             rel="stylesheet"
             type="text/css"

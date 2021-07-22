@@ -46,15 +46,15 @@ const Details = ({ project }) => {
                   height="100%"
                   src={project.ProjectImage1.url}
                   alt="Image"
-                  className="thumbnail order-md-2"
+                  className="thumbnail order-md-1 mr-5"
                 />
-                <div className="contents order-md-1 pl-0">
+                <div className="contents order-md-2 pl-0 pt-0">
                   <p className="mb-4">{project.Abstract}</p>
                   <h2>Supervisors</h2>
                   <div className="col-lg-6">
                     <div className="post-entry-2 d-flex">
                       {project.supervisors.map((supervisor) => (
-                        <div className="col-md-8">
+                        <div className="col-md-8" key={supervisor.id}>
                           <div className="post-entry-1">
                             <img
                               width="70"
@@ -75,7 +75,7 @@ const Details = ({ project }) => {
                   <div className="col-lg-6">
                     <div className="post-entry-2 d-flex">
                       {project.authors.map((author) => (
-                        <div className="col-md-8">
+                        <div className="col-md-8" key={author.id}>
                           <div className="post-entry-1">
                             <img
                               width="70"
@@ -97,25 +97,29 @@ const Details = ({ project }) => {
                     <div className="post-entry-2 d-flex">
                       <div className="col-md-8">
                         <div className="post-entry-1">
-                          <Link href={project.GithubRepoLink}>
-                            <input
-                              type="submit"
-                              value="Github Repo"
-                              className="btn-2 btn-primary py-2 px-8"
-                            />
-                          </Link>
+                          {!!project.GithubRepoLink && (
+                            <Link href={project.GithubRepoLink}>
+                              <input
+                                type="submit"
+                                value="Github Repo"
+                                className="btn-2 btn-primary py-2 px-8"
+                              />
+                            </Link>
+                          )}
                         </div>
                       </div>
 
                       <div className="col-md-8">
                         <div className="post-entry-1">
-                          <Link href={project.ProjectPortfolioLink}>
-                            <input
-                              type="submit"
-                              value="Portfolio"
-                              className="btn-2 btn-primary py-2 px-8"
-                            />
-                          </Link>
+                          {!!project.ProjectPortfolioLink && (
+                            <Link href={project.ProjectPortfolioLink}>
+                              <input
+                                type="submit"
+                                value="Portfolio"
+                                className="btn-2 btn-primary py-2 px-8"
+                              />
+                            </Link>
+                          )}
                         </div>
                       </div>
                     </div>
@@ -144,7 +148,7 @@ export async function getStaticPaths() {
   const slugs = await getAllProjectSlugs();
   return {
     paths: slugs?.map((slug) => `/projects/${slug}`) || [],
-    fallback: true
+    fallback: false
   };
 }
 

@@ -1,14 +1,7 @@
 import moment from 'moment';
 import Link from 'next/link';
 
-export default function SmallProjectEntry({
-  id,
-  abstract,
-  name,
-  image,
-  slug,
-  createdAt
-}) {
+export default function SmallProjectEntry({ id, name, image, slug, createdAt }) {
   return (
     <div className="post-entry-2 d-flex bg-light" key={id}>
       {!!image && (

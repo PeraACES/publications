@@ -90,6 +90,7 @@ const Home = ({ data, error }) => {
                       <SmallProjectEntry
                         key={item.id}
                         id={item.id}
+                        slug={item.slug}
                         abstract={item.Abstract}
                         name={item.ProjectName}
                         image={item.ProjectImage1}
@@ -118,6 +119,7 @@ const Home = ({ data, error }) => {
                   <ListProjectEntry
                     key={item.id}
                     id={item.id}
+                    slug={item.slug}
                     // abstract={item.Abstract}
                     name={item.ProjectName}
                     image={item.ProjectImage1}
