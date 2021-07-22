@@ -7,6 +7,7 @@ export default function ListProjectEntry({
   abstract,
   name,
   image,
+  slug,
   createdAt,
   displayButton = false
 }) {
@@ -21,7 +22,7 @@ export default function ListProjectEntry({
       <div className="contents order-md-1 pl-4">
         {!!name && (
           <h2>
-            <Link href={`/projects/${id}`}>
+            <Link href={`/projects/${slug}`}>
               <a>{name}</a>
             </Link>
           </h2>
@@ -33,7 +34,7 @@ export default function ListProjectEntry({
           <span className="date-read">{moment(createdAt).fromNow()}</span>
         </div>
         {displayButton && (
-          <Link href={`/projects/${id}`}>
+          <Link href={`/projects/${slug}`}>
             <a className="btn btn-info mt-2" role="button">
               View More
             </a>

@@ -1,7 +1,14 @@
 import moment from 'moment';
 import Link from 'next/link';
 
-export default function SmallProjectEntry({ id, abstract, name, image, createdAt }) {
+export default function SmallProjectEntry({
+  id,
+  abstract,
+  name,
+  image,
+  slug,
+  createdAt
+}) {
   return (
     <div className="post-entry-2 d-flex bg-light" key={id}>
       {!!image && (
@@ -10,7 +17,7 @@ export default function SmallProjectEntry({ id, abstract, name, image, createdAt
       <div className="contents">
         {!!name && (
           <h2>
-            <Link href={`/projects/${id}`}>
+            <Link href={`/projects/${slug}`}>
               <a>{name}</a>
             </Link>
           </h2>
