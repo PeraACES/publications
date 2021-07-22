@@ -18,7 +18,11 @@ export default function Header() {
             <div className="col-12 col-lg-6 d-flex">
               <Link href="/">
                 <a className="site-logo">
-                  <img src="images/aces-logo-vector.png" alt="aces-logo" className="escape-logo" />
+                  <img
+                    src="/images/aces-logo-vector.png"
+                    alt="aces-logo"
+                    className="escape-logo"
+                  />
                   ESCaPe Publications
                 </a>
               </Link>
