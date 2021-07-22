@@ -12,7 +12,7 @@ export default function ListProjectEntry({
   displayButton = false
 }) {
   return (
-    <div className="post-entry-2 d-flex" key={id}>
+    <div className="post-entry-2 d-flex pb-5 mb-5" key={id}>
       {!!image && (
         <div
           className="thumbnail order-md-2"

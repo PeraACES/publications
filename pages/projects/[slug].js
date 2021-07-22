@@ -7,7 +7,7 @@ import SingleProjectEntry from '../../components/Projects/SingleProjectEntry';
 import ReactMarkdown from 'react-markdown';
 
 const Details = ({ project }) => {
-  console.log(project);
+  // console.log(project);
   const router = useRouter();
 
   if (!router.isFallback && !project?.slug) {
@@ -116,7 +116,7 @@ const Details = ({ project }) => {
             <div className="row">
               <div className="col mr-5">
                 <p>
-                  <a href={project.ProjectPortfolioLink} class="more">
+                  <a href={project.ProjectPortfolioLink} class="more" target="_blank" rel="noreferrer">
                     More Information<span class="icon-keyboard_arrow_right"></span>
                   </a>
                 </p>
@@ -126,7 +126,7 @@ const Details = ({ project }) => {
             <div className="row">
               <div className="col">
                 <p>
-                  <a href={project.GithubRepoLink} class="more">
+                  <a href={project.GithubRepoLink} class="more" target="_blank" rel="noreferrer">
                     GitHub Repository <span class="icon-keyboard_arrow_right"></span>
                   </a>
                 </p>
