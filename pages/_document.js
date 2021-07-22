@@ -1,15 +1,21 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 
 class MyDocument extends Document {
-  static async getInitialProps(ctx) {
-    const initialProps = await Document.getInitialProps(ctx);
-    return { ...initialProps };
-  }
+  // static async getInitialProps(ctx) {
+  //   const initialProps = await Document.getInitialProps(ctx);
+  //   return { ...initialProps };
+  // }
 
   render() {
     return (
       <Html>
         <Head>
+          <title>ESCaPe 2021 | Online Project Symposium UOP</title>
+          <meta charSet="utf-8" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+          />
           <link
             href="https://fonts.googleapis.com/css?family=B612+Mono|Cabin:400,700&display=swap"
             rel="stylesheet"
