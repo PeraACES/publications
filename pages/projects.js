@@ -81,7 +81,7 @@ export default function Projects({ data, error, href }) {
                     displayButton={true}
                   />
                 ))}
-              <div className="row">
+              {/* <div className="row">
                 <div className="col-lg-6">
                   <ul className="custom-pagination list-unstyled">
                     <li>
@@ -96,7 +96,7 @@ export default function Projects({ data, error, href }) {
                     </li>
                   </ul>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
