@@ -1,5 +1,6 @@
 import fetch from 'isomorphic-fetch';
 import Link from 'next/link';
+import Layout from '../components/Layout/Layout';
 import { API_URL } from '../config';
 
 // pagination url with filters
@@ -13,43 +14,44 @@ const Precedings = ({ proceedings, error }) => {
   }
 
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col-lg-12">
-          <div className="section-title">
-            {/* <span className="caption d-block small">Categories</span>
+    <Layout>
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-12">
+            <div className="section-title">
+              {/* <span className="caption d-block small">Categories</span>
                         <h2>Projects</h2> */}
-          </div>
-          {proceedings.map((proceedings) => (
-            <div key={proceedings.id} className="post-entry-2 d-flex">
-              <img
-                width="100%"
-                height="100%"
-                src={`${proceedings.image.url}`}
-                alt="Image"
-                className="thumbnail order-md-2"
-              />
-              <div className="contents order-md-1 pl-0">
-                <h2>
-                  <a href="blog-single.html">{proceedings.title}</a>
-                </h2>
-                <h3 className="mb-3">{proceedings.subtitle}</h3>
-                <p className="mb-3">{proceedings.markup}</p>
-                <div className="row">
-                  <div className="col-12">
-                    <Link href={'/proceedings/' + proceedings.id}>
-                      <input
-                        type="submit"
-                        value="View More"
-                        className="btn-2 btn-primary py-2 px-8"
-                      />
-                    </Link>
+            </div>
+            {proceedings.map((proceedings) => (
+              <div key={proceedings.id} className="post-entry-2 d-flex">
+                <img
+                  width="100%"
+                  height="100%"
+                  src={`${proceedings.image.url}`}
+                  alt="Image"
+                  className="thumbnail order-md-2"
+                />
+                <div className="contents order-md-1 pl-0">
+                  <h2>
+                    <a href="blog-single.html">{proceedings.title}</a>
+                  </h2>
+                  <h3 className="mb-3">{proceedings.subtitle}</h3>
+                  <p className="mb-3">{proceedings.markup}</p>
+                  <div className="row">
+                    <div className="col-12">
+                      <Link href={'/proceedings/' + proceedings.id}>
+                        <input
+                          type="submit"
+                          value="View More"
+                          className="btn-2 btn-primary py-2 px-8"
+                        />
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
-          {/* <div className="row">
+            ))}
+            {/* <div className="row">
                         <div className="col-lg-6">
                             <ul className="custom-pagination list-unstyled">
                             <li><a href="#">1</a></li>
@@ -59,9 +61,10 @@ const Precedings = ({ proceedings, error }) => {
                             </ul>
                         </div>
                     </div> */}
+          </div>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 
