@@ -13,12 +13,12 @@ export default function Header() {
         <div className="site-mobile-menu-body"></div>
       </div>
       <div className="header-top">
-        <div className="container">
+        <div className="container pb-0 pt-1">
           <div className="row align-items-center">
             <div className="col-12 col-lg-6 d-flex">
               <Link href="/">
                 <a className="site-logo">
-                  <img src="images/aces_logo.jpg" alt="Image" className="escape-logo" />
+                  <img src="images/aces-logo-vector.png" alt="aces-logo" className="escape-logo" />
                   ESCaPe Publications
                 </a>
               </Link>
