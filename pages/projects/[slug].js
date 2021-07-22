@@ -120,11 +120,11 @@ const Details = ({ project }) => {
                     <p>
                       <a
                         href={project.ProjectPortfolioLink}
-                        class="more"
+                        className="more"
                         target="_blank"
                         rel="noreferrer"
                       >
-                        More Information<span class="icon-keyboard_arrow_right"></span>
+                        More Information<span className="icon-keyboard_arrow_right"></span>
                       </a>
                     </p>
                   </div>
@@ -138,11 +138,11 @@ const Details = ({ project }) => {
                   <p>
                     <a
                       href={project.GithubRepoLink}
-                      class="more"
+                      className="more"
                       target="_blank"
                       rel="noreferrer"
                     >
-                      GitHub Repository <span class="icon-keyboard_arrow_right"></span>
+                      GitHub Repository <span className="icon-keyboard_arrow_right"></span>
                     </a>
                   </p>
                 </div>

@@ -35,7 +35,7 @@ const Precedings = ({ proceedings, error }) => {
                   <h2>
                     <a href="blog-single.html">{proceedings.title}</a>
                   </h2>
-                  <h3 className="mb-3">{proceedings.subtitle}</h3>
+                  <h3 className="mb-3">{proceedings.Theme}</h3>
                   <p className="mb-3">{proceedings.markup}</p>
                   <div className="row">
                     <div className="col-12">
