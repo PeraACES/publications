@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import Carousel from '../components/Carousel/Carousel';
+import Layout from '../components/Layout/Layout';
 import CardProjectEntry from '../components/Projects/CardProjectEntry';
 import ListProjectEntry from '../components/Projects/ListProjectEntry';
 import SmallProjectEntry from '../components/Projects/SmallProjectEntry';
@@ -17,7 +18,7 @@ const Home = ({ data, error }) => {
   }
 
   return (
-    <>
+    <Layout>
       <div className="site-section" style={{ paddingBottom: '1rem' }}>
         <div className="container">
           {/* Header */}
@@ -134,7 +135,7 @@ const Home = ({ data, error }) => {
           </div>
         </div>
       </div>
-    </>
+    </Layout>
   );
 };
 

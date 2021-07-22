@@ -1,5 +1,6 @@
 // import { useEffect, useState } from 'react';
 import fetch from 'isomorphic-fetch';
+import Layout from '../components/Layout/Layout';
 // import { useRouter, withRouter } from 'next/router';
 // import Link from 'next/link';
 import ListProjectEntry from '../components/Projects/ListProjectEntry';
@@ -58,47 +59,49 @@ export default function Projects({ data, error, href }) {
   }
 
   return (
-    <div className="site-section" style={{ paddingBottom: '1rem' }}>
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-12">
-            <div className="section-title">
-              <h2>All Projects</h2>
-            </div>
-            {!!projects &&
-              Array.isArray(projects) &&
-              projects.map((item) => (
-                <ListProjectEntry
-                  key={item.id}
-                  id={item.id}
-                  slug={item.slug}
-                  abstract={item.Abstract}
-                  name={item.ProjectName}
-                  image={item.ProjectImage1}
-                  createdAt={item.createdAt}
-                  displayButton={true}
-                />
-              ))}
-            <div className="row">
-              <div className="col-lg-6">
-                <ul className="custom-pagination list-unstyled">
-                  <li>
-                    <a href="#">1</a>
-                  </li>
-                  <li className="active">2</li>
-                  <li>
-                    <a href="#">3</a>
-                  </li>
-                  <li>
-                    <a href="#">4</a>
-                  </li>
-                </ul>
+    <Layout>
+      <div className="site-section" style={{ paddingBottom: '1rem' }}>
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12">
+              <div className="section-title">
+                <h2>All Projects</h2>
+              </div>
+              {!!projects &&
+                Array.isArray(projects) &&
+                projects.map((item) => (
+                  <ListProjectEntry
+                    key={item.id}
+                    id={item.id}
+                    slug={item.slug}
+                    abstract={item.Abstract}
+                    name={item.ProjectName}
+                    image={item.ProjectImage1}
+                    createdAt={item.createdAt}
+                    displayButton={true}
+                  />
+                ))}
+              <div className="row">
+                <div className="col-lg-6">
+                  <ul className="custom-pagination list-unstyled">
+                    <li>
+                      <a href="#">1</a>
+                    </li>
+                    <li className="active">2</li>
+                    <li>
+                      <a href="#">3</a>
+                    </li>
+                    <li>
+                      <a href="#">4</a>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 }
 
