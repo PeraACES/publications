@@ -8,7 +8,15 @@ import SmallProjectEntry from '../components/Projects/SmallProjectEntry';
 import { API_URL } from '../config';
 
 const Home = ({ data, error }) => {
-  const { featured_proceedings, featured_projects, recent_projects, header, body } = data;
+  const {
+    featured_proceedings,
+    featured_projects,
+    recent_projects,
+    header,
+    body,
+    seo,
+    seoMetas
+  } = data;
 
   // console.log(featured_proceedings);
 
@@ -20,7 +28,11 @@ const Home = ({ data, error }) => {
   }
 
   return (
-    <Layout title={'ACES ESCaPe Publications | University of Peradeniya'}>
+    <Layout
+      title={'ACES ESCaPe Publications | University of Peradeniya'}
+      seo={seo}
+      seoMetas={seoMetas}
+    >
       <div className="site-section" style={{ paddingBottom: '1rem' }}>
         <div className="container">
           {/* Header */}

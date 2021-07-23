@@ -4,6 +4,7 @@ import Footer from './Footer';
 import Header from './Header';
 
 export default function Layout({ children, title, seo, seoMetas = [] }) {
+  // console.log(seo, seoMetas);
   return (
     <>
       <Head>
@@ -17,7 +18,7 @@ export default function Layout({ children, title, seo, seoMetas = [] }) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-        {!!seo ? (
+        {!!seo && !!seo.content ? (
           <meta name="description" content={seo.content} />
         ) : (
           <meta
@@ -25,6 +26,11 @@ export default function Layout({ children, title, seo, seoMetas = [] }) {
             content="ACES ESCaPe Publications : Symposium Precedings and Projects by Undergraduates of Dept. of Computer Engineering, Faculty of Engineering, University of Peradeniya"
           />
         )}
+        {!!seoMetas &&
+          Array.isArray(seoMetas) &&
+          seoMetas.map((item) => (
+            <meta property={item.property} content={item.content} key={item._id} />
+          ))}
         <link
           href="https://fonts.googleapis.com/css?family=B612+Mono|Cabin:400,700&display=swap"
           rel="stylesheet"

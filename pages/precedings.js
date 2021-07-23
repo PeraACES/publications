@@ -60,7 +60,7 @@ export default function Proceedings({ data, error, href }) {
   }
 
   return (
-    <Layout>
+    <Layout title={'ACES ESCaPe Precedings | University of Peradeniya'}>
       <div className="site-section" style={{ paddingBottom: '1rem' }}>
         <div className="container">
           <div className="row">
