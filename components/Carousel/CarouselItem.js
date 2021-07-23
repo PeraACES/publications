@@ -1,13 +1,13 @@
 import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
 
-export default function CarouselItem({ id, title, subtitle, image, markup }) {
+export default function CarouselItem({ id, slug, title, subtitle, image, markup }) {
   return (
     <div className="site-section" key={id}>
       <div className="container">
         <div className="half-post-entry d-block d-lg-flex bg-light">
           {!!image && (
-            <Link href={`/precedings/${id}`}>
+            <Link href={`/proceedings/${slug}`}>
               <a>
                 <img src={image.formats.small.url} alt="Image" className="img-bg" />
               </a>
