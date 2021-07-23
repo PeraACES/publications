@@ -12,7 +12,7 @@ const Contact = ({ data, error }) => {
   }
 
   return (
-    <Layout>
+    <Layout title={'Contact | ACES ESCaPe Publications'}>
       <div className="site-section bg-light" id="Contact">
         <div className="container">
           <div className="row">

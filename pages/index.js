@@ -20,7 +20,7 @@ const Home = ({ data, error }) => {
   }
 
   return (
-    <Layout>
+    <Layout title={'ACES ESCaPe Publications | University of Peradeniya'}>
       <div className="site-section" style={{ paddingBottom: '1rem' }}>
         <div className="container">
           {/* Header */}
