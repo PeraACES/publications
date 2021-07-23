@@ -59,7 +59,7 @@ export default function Projects({ data, error, href }) {
   }
 
   return (
-    <Layout>
+    <Layout title={'ACES ESCaPe Projects | University of Peradeniya'}>
       <div className="site-section" style={{ paddingBottom: '1rem' }}>
         <div className="container">
           <div className="row">

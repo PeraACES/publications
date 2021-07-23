@@ -5,14 +5,14 @@ import Layout from '../components/Layout/Layout';
 import { getContactPageData } from '../lib/api';
 
 const Contact = ({ data, error }) => {
-  const { header, body } = data;
-  console.log(data);
+  const { header, body, seo, seoMetas } = data;
+  // console.log(data);
   if (error) {
     return <div>An error occured: {error.message}</div>;
   }
 
   return (
-    <Layout title={'Contact | ACES ESCaPe Publications'}>
+    <Layout title={'Contact | ACES ESCaPe Publications'} seo={seo} seoMetas={seoMetas}>
       <div className="site-section bg-light" id="Contact">
         <div className="container">
           <div className="row">
