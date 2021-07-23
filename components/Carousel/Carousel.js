@@ -10,6 +10,7 @@ export default function Carousel({ featured_proceedings }) {
             <CarouselItem
               key={item.id}
               id={item.id}
+              slug={item.slug}
               title={item.title}
               subtitle={item.subtitle}
               image={item.image}
