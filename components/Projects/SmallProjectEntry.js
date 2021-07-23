@@ -10,7 +10,7 @@ export default function SmallProjectEntry({ id, name, image, slug, createdAt }) 
       <div className="contents">
         {!!name && (
           <h2>
-            <Link href={`/projects/${slug}`}>
+            <Link href={`https://aces.ce.pdn.ac.lk/publications/projects/${slug}`}>
               <a>{name}</a>
             </Link>
           </h2>

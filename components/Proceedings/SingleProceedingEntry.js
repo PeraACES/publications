@@ -16,7 +16,7 @@ const Person = ({ id, title, image, link }) => (
           )}
           {!!link ? (
             <a className="text-black mt-2" href={link} target="_blank" rel="noreferrer">
-              {name}
+              {title}
             </a>
           ) : (
             <h6 className="text-black mt-2">{title}</h6>

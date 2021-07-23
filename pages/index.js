@@ -113,7 +113,7 @@ const Home = ({ data, error }) => {
                       />
                     ))}
                   <p>
-                    <Link href="/projects">
+                    <Link href="https://aces.ce.pdn.ac.lk/publications/projects">
                       <a className="more">
                         See All Projects{' '}
                         <span className="icon-keyboard_arrow_right"></span>
@@ -142,7 +142,7 @@ const Home = ({ data, error }) => {
                   />
                 ))}
               <p>
-                <Link href="/projects">
+                <Link href="https://aces.ce.pdn.ac.lk/publications/projects">
                   <a className="more">
                     See All Projects <span className="icon-keyboard_arrow_right"></span>
                   </a>

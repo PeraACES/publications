@@ -10,7 +10,7 @@ export default function SmallProceedingEntry({ id, title, image, slug, createdAt
       <div className="contents">
         {!!title && (
           <h2>
-            <Link href={`/proceedings/${slug}`}>
+            <Link href={`https://aces.ce.pdn.ac.lk/publications/proceedings/${slug}`}>
               <a>{title}</a>
             </Link>
           </h2>

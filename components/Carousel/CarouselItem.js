@@ -7,7 +7,7 @@ export default function CarouselItem({ id, slug, title, subtitle, image, markup 
       <div className="container">
         <div className="half-post-entry d-block d-lg-flex bg-light">
           {!!image && (
-            <Link href={`/proceedings/${slug}`}>
+            <Link href={`https://aces.ce.pdn.ac.lk/publications/proceedings/${slug}`}>
               <a>
                 <img src={image.formats.small.url} alt="Image" className="img-bg" />
               </a>
