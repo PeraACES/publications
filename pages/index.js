@@ -78,6 +78,7 @@ const Home = ({ data, error }) => {
                     <CardProjectEntry
                       key={featuredProject.id}
                       id={featuredProject.id}
+                      slug={featuredProject.slug}
                       abstract={featuredProject.Abstract}
                       name={featuredProject.ProjectName}
                       image={featuredProject.ProjectImage1}

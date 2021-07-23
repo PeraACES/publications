@@ -5,7 +5,13 @@ import TextTruncate from 'react-text-truncate';
 export default function CardProjectEntry({ id, abstract, name, image, slug, createdAt }) {
   return (
     <div className="post-entry-1" key={id}>
-      {!!image && <img src={image.url} alt={image.caption} className="img-fluid" />}
+      {!!image && (
+        <Link href={`/projects/${slug}`}>
+          <a>
+            <img src={image.url} alt={image.caption} className="img-fluid" />
+          </a>
+        </Link>
+      )}
       <div className="contents">
         {!!name && (
           <h2>
