@@ -37,30 +37,21 @@ const Details = ({ project }) => {
       <div className="site-section" style={{ paddingBottom: '1rem' }}>
         <div className="container">
           <div className="row">
-            {/* <div className="col-lg-12">
-              <SingleProjectEntry
-                id={project.id}
-                name={project.ProjectName}
-                image={project.ProjectImage1}
-                slug={project.slug}
-                authors={project.authors}
-                supervisors={project.supervisors}
-                createdAt={project.createdAt}
-              />
-            </div> */}
             <div className="col-lg-12">
               <div className="section-title">
-                {/* <span className="caption d-block small">Categories</span> */}
                 <h2>{project.ProjectName}</h2>
               </div>
               <div className="post-entry-2 d-flex">
-                <img
-                  width="100%"
-                  height="100%"
-                  src={project.ProjectImage1.url}
-                  alt="Image"
-                  className="thumbnail order-md-1 mr-5"
-                />
+                {!!project.ProjectImage1 && (
+                  <img
+                    width="100%"
+                    height="100%"
+                    src={project.ProjectImage1.url}
+                    alt="Image"
+                    className="thumbnail order-md-1 mr-5"
+                  />
+                )}
+
                 <div className="contents order-md-2 pl-0 pt-0">
                   <h2>Supervisors</h2>
                   <div className="col-lg-6">
@@ -68,15 +59,28 @@ const Details = ({ project }) => {
                       {project.supervisors.map((supervisor) => (
                         <div className="col-md-8" key={supervisor.id}>
                           <div className="post-entry-1">
-                            <img
-                              width="70"
-                              height="70"
-                              src={supervisor.SupervisorImage.url}
-                              alt="Image"
-                              className="img-fluid"
-                            />
+                            {!!supervisor.SupervisorImage && (
+                              <img
+                                width="70"
+                                height="70"
+                                src={supervisor.SupervisorImage.url}
+                                alt="Image"
+                                className="img-fluid"
+                              />
+                            )}
+
                             <h2>
-                              <a href="blog-single.html">{supervisor.SupervisorName}</a>
+                              {!!supervisor.link ? (
+                                <a
+                                  href={supervisor.link}
+                                  target="_blank"
+                                  rel="noreferrer"
+                                >
+                                  {supervisor.SupervisorName}
+                                </a>
+                              ) : (
+                                <p>{supervisor.SupervisorName}</p>
+                              )}
                             </h2>
                           </div>
                         </div>
@@ -89,15 +93,17 @@ const Details = ({ project }) => {
                       {project.authors.map((author) => (
                         <div className="col-md-8" key={author.id}>
                           <div className="post-entry-1">
-                            <img
-                              width="70"
-                              height="70"
-                              src={author.AuthorImage.url}
-                              alt="Image"
-                              className="img-fluid"
-                            />
+                            {!!author.AuthorImage && (
+                              <img
+                                width="70"
+                                height="70"
+                                src={author.AuthorImage.url}
+                                alt="Image"
+                                className="img-fluid"
+                              />
+                            )}
                             <h2>
-                              <a href="blog-single.html">{author.AuthorName}</a>
+                              <p>{author.AuthorName}</p>
                             </h2>
                           </div>
                         </div>
