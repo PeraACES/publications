@@ -2,7 +2,14 @@ import moment from 'moment';
 import Link from 'next/link';
 import TextTruncate from 'react-text-truncate';
 
-export default function CardProceedingEntry({ id, markup, title, image, slug, createdAt }) {
+export default function CardProceedingEntry({
+  id,
+  markup,
+  title,
+  image,
+  slug,
+  createdAt
+}) {
   return (
     <div className="post-entry-1" key={id}>
       {!!image && <img src={image.url} alt={image.caption} className="img-fluid" />}

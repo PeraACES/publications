@@ -1,10 +1,52 @@
+import Head from 'next/head';
 import React from 'react';
 import Footer from './Footer';
 import Header from './Header';
 
-export default function Layout({ children }) {
+export default function Layout({ children, title, seo, seoMetas = [] }) {
   return (
     <>
+      <Head>
+        <meta charSet="utf-8" />
+        {!!title ? (
+          <title>{title}</title>
+        ) : (
+          <title>ACES ESCaPe Publications | University of Peradeniya</title>
+        )}
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+        {!!seo ? (
+          <meta name="description" content={seo.content} />
+        ) : (
+          <meta
+            name="description"
+            content="ACES ESCaPe Publications : Symposium Precedings and Projects by Undergraduates of Dept. of Computer Engineering, Faculty of Engineering, University of Peradeniya"
+          />
+        )}
+        <link
+          href="https://fonts.googleapis.com/css?family=B612+Mono|Cabin:400,700&display=swap"
+          rel="stylesheet"
+        />
+        <link rel="stylesheet" href="/fonts/icomoon/style.css" />
+        <link rel="stylesheet" href="/fonts/flaticon/font/flaticon.css" />
+        <link rel="stylesheet" href="/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="/css/jquery-ui.css" />
+        <link rel="stylesheet" href="/css/owl.carousel.min.css" />
+        <link rel="stylesheet" href="/css/owl.theme.default.min.css" />
+        <link rel="stylesheet" href="/css/owl.theme.default.min.css" />
+        <link rel="stylesheet" href="/css/jquery.fancybox.min.css" />
+        <link rel="stylesheet" href="/css/bootstrap-datepicker.css" />
+        <link rel="stylesheet" href="/css/aos.css" />
+        <link
+          href="/css/jquery.mb.YTPlayer.min.css"
+          media="all"
+          rel="stylesheet"
+          type="text/css"
+        />
+        <link rel="stylesheet" href="/css/style.css" />
+      </Head>
       <Header />
       {children}
       <Footer />

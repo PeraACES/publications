@@ -20,7 +20,7 @@ const Home = ({ data, error }) => {
   }
 
   return (
-    <Layout>
+    <Layout title={'ACES ESCaPe Publications | University of Peradeniya'}>
       <div className="site-section" style={{ paddingBottom: '1rem' }}>
         <div className="container">
           {/* Header */}
@@ -78,6 +78,7 @@ const Home = ({ data, error }) => {
                     <CardProjectEntry
                       key={featuredProject.id}
                       id={featuredProject.id}
+                      slug={featuredProject.slug}
                       abstract={featuredProject.Abstract}
                       name={featuredProject.ProjectName}
                       image={featuredProject.ProjectImage1}
