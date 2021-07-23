@@ -124,7 +124,8 @@ const Details = ({ project }) => {
                         target="_blank"
                         rel="noreferrer"
                       >
-                        More Information<span className="icon-keyboard_arrow_right"></span>
+                        More Information
+                        <span className="icon-keyboard_arrow_right"></span>
                       </a>
                     </p>
                   </div>
@@ -142,7 +143,8 @@ const Details = ({ project }) => {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      GitHub Repository <span className="icon-keyboard_arrow_right"></span>
+                      GitHub Repository{' '}
+                      <span className="icon-keyboard_arrow_right"></span>
                     </a>
                   </p>
                 </div>

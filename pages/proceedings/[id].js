@@ -2,7 +2,6 @@ import { API_URL } from '../../config';
 import React from 'react';
 import PDFViewer from 'pdf-viewer-reactjs';
 
-
 export async function getStaticPaths() {
   const res = await fetch(API_URL + '/proceedings');
   const data = await res.json();
@@ -58,22 +57,22 @@ const Details = ({ proceedings }) => {
               <h2>Symposium Chair</h2>
               <div className="col-lg-6">
                 <div className="post-entry-2 d-flex">
-                  
-                    <div className="col-md-8">
-                      <div className="post-entry-1">
-                        <img
-                          width="70"
-                          height="70"
-                          src={proceedings.SymposiumChair.SupervisorImage.url}
-                          alt="Image"
-                          className="img-fluid"
-                        />
-                        <h2>
-                          <a href="blog-single.html">{proceedings.SymposiumChair.SupervisorName}</a>
-                        </h2>
-                      </div>
+                  <div className="col-md-8">
+                    <div className="post-entry-1">
+                      <img
+                        width="70"
+                        height="70"
+                        src={proceedings.SymposiumChair.SupervisorImage.url}
+                        alt="Image"
+                        className="img-fluid"
+                      />
+                      <h2>
+                        <a href="blog-single.html">
+                          {proceedings.SymposiumChair.SupervisorName}
+                        </a>
+                      </h2>
                     </div>
-                  
+                  </div>
                 </div>
               </div>
               <h2>Symposium Editors</h2>
@@ -100,13 +99,12 @@ const Details = ({ proceedings }) => {
               <div>
                 <PDFViewer
                   document={{
-                      url: proceedings.ProceedingPDFUrl,
+                    url: proceedings.ProceedingPDFUrl
                   }}
-                  navbarOnTop = {true}
+                  navbarOnTop={true}
                 />
               </div>
             </div>
-            
           </div>
         </div>
       </div>
