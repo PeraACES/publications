@@ -65,22 +65,22 @@ const Details = ({ proceeding }) => {
                   <h2>Symposium Chair</h2>
                   <div className="col-lg-6">
                     <div className="post-entry-2 d-flex">
-                      
-                        <div className="col-md-8" key={proceeding.SymposiumChair.id}>
-                          <div className="post-entry-1">
-                            <img
-                              width="70"
-                              height="70"
-                              src={proceeding.SymposiumChair.SupervisorImage.url}
-                              alt="Image"
-                              className="img-fluid"
-                            />
-                            <h2>
-                              <a href="blog-single.html">{proceeding.SymposiumChair.SupervisorName}</a>
-                            </h2>
-                          </div>
+                      <div className="col-md-8" key={proceeding.SymposiumChair.id}>
+                        <div className="post-entry-1">
+                          <img
+                            width="70"
+                            height="70"
+                            src={proceeding.SymposiumChair.SupervisorImage.url}
+                            alt="Image"
+                            className="img-fluid"
+                          />
+                          <h2>
+                            <a href="blog-single.html">
+                              {proceeding.SymposiumChair.SupervisorName}
+                            </a>
+                          </h2>
                         </div>
-                      
+                      </div>
                     </div>
                   </div>
                   <h2>Symposium Editors</h2>
@@ -109,11 +109,12 @@ const Details = ({ proceeding }) => {
             </div>
             <div className="row">
               <div className="col-lg">
-                {!!proceeding.markup && <ReactMarkdown>{proceeding.markup}</ReactMarkdown>}
+                {!!proceeding.markup && (
+                  <ReactMarkdown>{proceeding.markup}</ReactMarkdown>
+                )}
               </div>
               <div></div>
             </div>
-
           </div>
         </div>
       </div>

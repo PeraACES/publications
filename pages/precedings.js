@@ -58,7 +58,7 @@ export default function Proceedings({ data, error, href }) {
       </>
     );
   }
-  
+
   return (
     <Layout>
       <div className="site-section" style={{ paddingBottom: '1rem' }}>
