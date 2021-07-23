@@ -89,7 +89,7 @@ export default function Header() {
                       </Link>
                     </li>
                     <li>
-                      <Link href="https://aces.ce.pdn.ac.lk/publications/proceedings">
+                      <Link href="https://aces.ce.pdn.ac.lk/publications/precedings">
                         <a className="nav-link text-left">PRECEDINGS</a>
                       </Link>
                     </li>
