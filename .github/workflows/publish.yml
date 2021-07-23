@@ -23,8 +23,8 @@ jobs:
         run: npm install
       - name: Build the repository
         run: npm run build
-          # env:
-            # NEXT_PUBLIC_VAR: ${{ secrets.VAR }}
+        env:
+            NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
       - name: Export static files
         run: npx next export
       - name: Deploy to gh-pages
