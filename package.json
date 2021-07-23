@@ -2,6 +2,7 @@
   "name": "blog",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://aces.ce.pdn.ac.lk/publications",
   "scripts": {
     "build": "next build",
     "dev": "next dev",
