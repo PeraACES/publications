@@ -25,6 +25,7 @@ jobs:
         run: npm run build
         env:
             NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
+            NODE_ENV: 'production'
       - name: Export static files
         run: npx next export
       - name: Deploy to gh-pages
