@@ -5,14 +5,12 @@ import { getAllProceedingSlugs, getProceedingBySlug } from '../../lib/api';
 import Layout from '../../components/Layout/Layout';
 import SingleProceedingEntry from '../../components/Proceedings/SingleProceedingEntry';
 import ReactMarkdown from 'react-markdown';
-import { useState } from "react";
-import { Document, Page, pdfjs } from "react-pdf";
+import { useState } from 'react';
+import { Document, Page, pdfjs } from 'react-pdf';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
-
 const Details = ({ proceeding }) => {
-
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1); //setting 1 to show fisrt page
 
@@ -22,7 +20,7 @@ const Details = ({ proceeding }) => {
   }
 
   function changePage(offset) {
-    setPageNumber(prevPageNumber => prevPageNumber + offset);
+    if (pageNumber > 0) setPageNumber((prevPageNumber) => prevPageNumber + offset);
   }
 
   function previousPage() {
@@ -138,31 +136,41 @@ const Details = ({ proceeding }) => {
                   <ReactMarkdown>{proceeding.markup}</ReactMarkdown>
                 )}
               </div>
-              <div></div>
             </div>
-            <div className="row">
-              <div className="col-lg">
-                <Document
-                  file= {proceeding.ProceedingPDFUrl}
-                  onLoadSuccess={onDocumentLoadSuccess}
+          </div>
+        </div>
+        <div className="container">
+          <div className="mt-5 row justify-content-center">
+            <div className="col-8">
+              <Document
+                file={proceeding.ProceedingPDFUrl}
+                onLoadSuccess={onDocumentLoadSuccess}
+                className="row justify-content-center border"
+              >
+                <Page
+                  pageNumber={pageNumber}
+                  renderAnnotationLayer={false}
+                  renderTextLayer={false}
+                />
+              </Document>
+              <div className="text-center">
+                <p>
+                  Page {pageNumber || (numPages ? 1 : '--')} of {numPages || '--'}
+                </p>
+                <p
+                  className="btn btn-light btn-sm mr-3"
+                  disabled={pageNumber <= 1}
+                  onClick={previousPage}
                 >
-                  <Page pageNumber={pageNumber} />
-                </Document>
-                <div>
-                  <p>
-                    Page {pageNumber || (numPages ? 1 : "--")} of {numPages || "--"}
-                  </p>
-                  <button type="button" disabled={pageNumber <= 1} onClick={previousPage}>
-                    Previous
-                  </button>
-                  <button
-                    type="button"
-                    disabled={pageNumber >= numPages}
-                    onClick={nextPage}
-                  >
-                    Next
-                  </button>
-                </div>
+                  Previous
+                </p>
+                <p
+                  className="btn btn-light btn-sm"
+                  disabled={pageNumber >= numPages}
+                  onClick={nextPage}
+                >
+                  Next
+                </p>
               </div>
             </div>
           </div>
