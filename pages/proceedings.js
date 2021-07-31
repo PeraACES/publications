@@ -1,7 +1,5 @@
-import fetch from 'isomorphic-fetch';
 import Layout from '../components/Layout/Layout';
 import ListProceedingEntry from '../components/Proceedings/ListProceedingEntry';
-import { API_URL } from '../config';
 import { getAllProceedings } from '../lib/api';
 
 export default function Proceedings({ data, error, href }) {

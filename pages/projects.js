@@ -1,7 +1,5 @@
-import fetch from 'isomorphic-fetch';
 import Layout from '../components/Layout/Layout';
 import ListProjectEntry from '../components/Projects/ListProjectEntry';
-import { API_URL } from '../config';
 import { getAllProjects } from '../lib/api';
 
 export default function Projects({ data, error, href }) {

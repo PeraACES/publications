@@ -1,6 +1,4 @@
 import React from 'react';
-import fetch from 'isomorphic-fetch';
-import { API_URL } from '../config';
 import Layout from '../components/Layout/Layout';
 import { getContactPageData } from '../lib/api';
 
