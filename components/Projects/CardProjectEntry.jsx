@@ -6,7 +6,7 @@ export default function CardProjectEntry({ id, abstract, name, image, slug, crea
   return (
     <div className="post-entry-1" key={id}>
       {!!image && (
-        <Link href={`https://aces.ce.pdn.ac.lk/publications/projects/${slug}`}>
+        <Link href={`/projects/${slug}`}>
           <a>
             <img src={image.url} alt={image.caption} className="img-fluid" />
           </a>
@@ -15,13 +15,13 @@ export default function CardProjectEntry({ id, abstract, name, image, slug, crea
       <div className="contents">
         {!!name && (
           <h2>
-            <Link href={`https://aces.ce.pdn.ac.lk/publications/projects/${slug}`}>
+            <Link href={`/projects/${slug}`}>
               <a>{name}</a>
             </Link>
           </h2>
         )}
         {!!abstract && (
-          <Link href={`https://aces.ce.pdn.ac.lk/publications/projects/${slug}`}>
+          <Link href={`/projects/${slug}`}>
             <a>
               <TextTruncate line={4} element="p" truncateText="..." text={abstract} />
             </a>

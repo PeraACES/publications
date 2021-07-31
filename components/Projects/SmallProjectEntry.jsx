@@ -1,17 +1,17 @@
 import moment from 'moment';
 import Link from 'next/link';
 
-export default function SmallProceedingEntry({ id, title, image, slug, createdAt }) {
+export default function SmallProjectEntry({ id, name, image, slug, createdAt }) {
   return (
     <div className="post-entry-2 d-flex bg-light" key={id}>
       {!!image && (
         <div className="thumbnail" style={{ backgroundImage: `url(${image.url})` }}></div>
       )}
       <div className="contents">
-        {!!title && (
+        {!!name && (
           <h2>
-            <Link href={`https://aces.ce.pdn.ac.lk/publications/proceedings/${slug}`}>
-              <a>{title}</a>
+            <Link href={`/projects/${slug}`}>
+              <a>{name}</a>
             </Link>
           </h2>
         )}

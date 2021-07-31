@@ -16,13 +16,13 @@ export default function CardProceedingEntry({
       <div className="contents">
         {!!title && (
           <h2>
-            <Link href={`https://aces.ce.pdn.ac.lk/publications/proceedings/${slug}`}>
+            <Link href={`/proceedings/${slug}`}>
               <a>{title}</a>
             </Link>
           </h2>
         )}
         {!!markup && (
-          <Link href={`https://aces.ce.pdn.ac.lk/publications/proceedings/${slug}`}>
+          <Link href={`/proceedings/${slug}`}>
             <a>
               <TextTruncate line={4} element="p" truncateText="..." text={markup} />
             </a>
