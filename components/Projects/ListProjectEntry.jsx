@@ -28,7 +28,16 @@ export default function ListProjectEntry({
           </h2>
         )}
         {!!abstract && (
-          <TextTruncate line={4} element="p" truncateText="..." text={abstract} />
+          <div
+            style={{
+              MozUserSelect: 'none',
+              msUserSelect: 'none',
+              WebkitUserSelect: 'none',
+              userSelect: 'none'
+            }}
+          >
+            <TextTruncate line={4} element="p" truncateText="..." text={abstract} />
+          </div>
         )}
         <div className="post-meta">
           <span className="date-read">{moment(createdAt).fromNow()}</span>

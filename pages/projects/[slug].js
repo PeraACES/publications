@@ -111,7 +111,15 @@ const Details = ({ project }) => {
               </div>
             </div>
             <div className="row">
-              <div className="col-lg">
+              <div
+                className="col-lg"
+                style={{
+                  MozUserSelect: 'none',
+                  msUserSelect: 'none',
+                  WebkitUserSelect: 'none',
+                  userSelect: 'none'
+                }}
+              >
                 {!!project.Abstract && <ReactMarkdown>{project.Abstract}</ReactMarkdown>}
               </div>
               <div></div>
