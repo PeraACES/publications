@@ -2,6 +2,8 @@ import React from 'react';
 import Image from 'next/image'
 import Link from '../Link/Link';
 
+const assetPrefix = process.env.ASSET_PREFIX;
+
 export default function Header() {
   return (
     <>
@@ -20,7 +22,7 @@ export default function Header() {
               <Link href="/">
                 <a className="site-logo">
                   <Image
-                    src="/images/aces-logo-vector.png"
+                    src={`${assetPrefix}/images/aces-logo-vector.png`}
                     alt="aces-logo"
                     className="escape-logo"
                   />
