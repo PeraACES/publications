@@ -8,6 +8,21 @@ import { Document, Page, pdfjs } from 'react-pdf';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
+const Sponsor = ({ id, image, link, alt }) => (
+  <div className="col m-2" key={id}>
+    <a href={link} target="_blank" rel="noreferrer">
+      {!!image && image.url && (
+        <img
+          width="70"
+          src={image.url}
+          alt={alt}
+          style={{ borderRadius: '3px', background: 'transparent' }}
+        />
+      )}
+    </a>
+  </div>
+);
+
 const Details = ({ proceeding }) => {
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1); //setting 1 to show fisrt page
@@ -105,25 +120,25 @@ const Details = ({ proceeding }) => {
                   <h2>Symposium Editors</h2>
                   <div className="col-lg-6">
                     <div className="post-entry-2 d-flex">
-                      {proceeding.SymposiumEditors.map((editors) => (
-                        <div className="col-md-8" key={editors.id}>
+                      {proceeding.SymposiumEditors.map((editor) => (
+                        <div className="col-md-8" key={editor.id}>
                           <div className="post-entry-1">
-                            {!!editors.SupervisorImage && (
+                            {!!editor.SupervisorImage && (
                               <img
                                 width="70"
                                 height="70"
-                                src={editors.SupervisorImage.url}
+                                src={editor.SupervisorImage.url}
                                 alt="Image"
                                 className="img-fluid"
                               />
                             )}
                             <h2>
-                              {!!editors.link ? (
-                                <a href={editors.link} target="_blank" rel="noreferrer">
-                                  {editors.SupervisorName}
+                              {!!editor.link ? (
+                                <a href={editor.link} target="_blank" rel="noreferrer">
+                                  {editor.SupervisorName}
                                 </a>
                               ) : (
-                                <p>{editors.SupervisorName}</p>
+                                <p>{editor.SupervisorName}</p>
                               )}
                             </h2>
                           </div>
@@ -177,6 +192,29 @@ const Details = ({ proceeding }) => {
                 </button>
               </div>
             </div>
+          </div>
+        </div>
+        <div className="container mt-5 pt-5">
+          <div className="row text-center">
+            {!!proceeding.sponsorGroups &&
+              Array.isArray(proceeding.sponsorGroups) &&
+              proceeding.sponsorGroups.map((sponserGroup) => (
+                <div className="col">
+                  {!!sponserGroup.title && <h5>{sponserGroup.title}</h5>}
+                  <div className="row mt-4 justify-content-center">
+                    {!!sponserGroup.sponsors &&
+                      Array.isArray(sponserGroup.sponsors) &&
+                      sponserGroup.sponsors.map((sponsor) => (
+                        <Sponsor
+                          id={sponsor.id}
+                          image={sponsor.image}
+                          link={sponsor.link}
+                          alt={sponsor.alt}
+                        />
+                      ))}
+                  </div>
+                </div>
+              ))}
           </div>
         </div>
       </div>
