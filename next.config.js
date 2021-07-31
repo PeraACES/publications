@@ -6,7 +6,7 @@ const isProd = (process.env.NODE_ENV || 'production') === 'production';
 
 // const basePath = ON_GITHUB_PAGES ? '/publications' : '';
 // Use the CDN in production and localhost for development.
-const assetPrefix = isProd ? 'https://aces.ce.pdn.ac.lk' : '';
+const assetPrefix = isProd ? '/publications' : '';
 
 module.exports = {
   exportPathMap: () => ({
