@@ -55,11 +55,7 @@ const Home = ({ data, error }) => {
               {!!header.button &&
                 Array.isArray(header.button) &&
                 header.button.map((item) => (
-                  <Link
-                    href={item.link}
-                    as={`${process.env.ASSET_PREFIX}${item.link}`}
-                    key={item.title}
-                  >
+                  <Link href={item.link} key={item.title}>
                     <a className={`btn btn-${item.color} mr-4`} role="button">
                       {item.title}
                     </a>
@@ -117,7 +113,7 @@ const Home = ({ data, error }) => {
                       />
                     ))}
                   <p>
-                    <Link href="/projects" as={`${process.env.ASSET_PREFIX}/projects`}>
+                    <Link href="/projects">
                       <a className="more">
                         See All Projects{' '}
                         <span className="icon-keyboard_arrow_right"></span>
@@ -146,7 +142,7 @@ const Home = ({ data, error }) => {
                   />
                 ))}
               <p>
-                <Link href="/projects" as={`${process.env.ASSET_PREFIX}/projects`}>
+                <Link href="/projects">
                   <a className="more">
                     See All Projects <span className="icon-keyboard_arrow_right"></span>
                   </a>

@@ -10,10 +10,7 @@ export default function SmallProceedingEntry({ id, title, image, slug, createdAt
       <div className="contents">
         {!!title && (
           <h2>
-            <Link
-              href={`/proceedings/${slug}`}
-              as={`${process.env.ASSET_PREFIX}/proceedings/${slug}`}
-            >
+            <Link href={`/proceedings/${slug}`}>
               <a>{title}</a>
             </Link>
           </h2>
