@@ -27,3 +27,4 @@ package.json
 .eslintignore
 .gitignore
 .prettierignore
+.github
