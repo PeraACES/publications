@@ -1,9 +1,7 @@
 import { useRouter } from 'next/dist/client/router';
-import Link from 'next/link';
 import ErrorPage from 'next/error';
 import { getAllProjectSlugs, getProjectBySlug } from '../../lib/api';
 import Layout from '../../components/Layout/Layout';
-import SingleProjectEntry from '../../components/Projects/SingleProjectEntry';
 import ReactMarkdown from 'react-markdown';
 
 const Details = ({ project }) => {

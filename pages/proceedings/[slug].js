@@ -1,9 +1,7 @@
 import { useRouter } from 'next/dist/client/router';
-import Link from 'next/link';
 import ErrorPage from 'next/error';
 import { getAllProceedingSlugs, getProceedingBySlug } from '../../lib/api';
 import Layout from '../../components/Layout/Layout';
-import SingleProceedingEntry from '../../components/Proceedings/SingleProceedingEntry';
 import ReactMarkdown from 'react-markdown';
 import { useState } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
