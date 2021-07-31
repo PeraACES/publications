@@ -1,7 +1,7 @@
 const assetPrefix = process.env.ASSET_PREFIX;
 
 const Author = ({ id, image, alt, name }) => (
-  <div className="col m-2" key={id}>
+  <div className="col mt-2" key={id}>
     {!!!!image && image.url ? (
       <img
         width="70"

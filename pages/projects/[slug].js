@@ -53,33 +53,39 @@ const Details = ({ project }) => {
                 )}
 
                 <div className="contents order-md-2 pl-0 pt-0">
-                  <h2>Supervisors</h2>
-                  <div className="col-lg-6">
-                    <div className="post-entry-2 d-flex">
-                      {project.supervisors.map((supervisor) => (
-                        <Supervisor
-                          key={supervisor.id}
-                          id={supervisor.id}
-                          image={supervisor.SupervisorImage}
-                          link={supervisor.link}
-                          alt={supervisor.SupervisorName}
-                          name={supervisor.SupervisorName}
-                        />
-                      ))}
-                    </div>
-                  </div>
-                  <h2>Authors</h2>
-                  <div className="col-lg-6">
-                    <div className="post-entry-2 d-flex">
-                      {project.authors.map((author) => (
-                        <Author
-                          key={author.id}
-                          id={author.id}
-                          image={author.AuthorImage}
-                          alt={author.AuthorName}
-                          name={author.AuthorName}
-                        />
-                      ))}
+                  <div className="container">
+                    <div className="row text-center">
+                      <div className="col-md-5">
+                        <h5>Supervisors</h5>
+                        <div className="row mt-4 justify-content-center">
+                          {project.supervisors.map((supervisor) => (
+                            <Supervisor
+                              key={supervisor.id}
+                              id={supervisor.id}
+                              image={supervisor.SupervisorImage}
+                              link={supervisor.link}
+                              alt={supervisor.SupervisorName}
+                              name={supervisor.SupervisorName}
+                            />
+                          ))}
+                        </div>
+                      </div>
+                      <div className="col-md-7">
+                        <h5>Authors</h5>
+                        <div className="row mt-4 justify-content-center">
+                          {!!project.authors &&
+                            Array.isArray(project.authors) &&
+                            project.authors.map((author) => (
+                              <Author
+                                key={author.id}
+                                id={author.id}
+                                image={author.AuthorImage}
+                                alt={author.AuthorName}
+                                name={author.AuthorName}
+                              />
+                            ))}
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
