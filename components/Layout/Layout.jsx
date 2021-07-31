@@ -35,23 +35,56 @@ export default function Layout({ children, title, seo, seoMetas = [] }) {
           href="https://fonts.googleapis.com/css?family=B612+Mono|Cabin:400,700&display=swap"
           rel="stylesheet"
         />
-        <link rel="stylesheet" href="https://aces.ce.pdn.ac.lk/publications/fonts/icomoon/style.css" />
-        <link rel="stylesheet" href="https://aces.ce.pdn.ac.lk/publications/fonts/flaticon/font/flaticon.css" />
-        <link rel="stylesheet" href="https://aces.ce.pdn.ac.lk/publications/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="https://aces.ce.pdn.ac.lk/publications/css/jquery-ui.css" />
-        <link rel="stylesheet" href="https://aces.ce.pdn.ac.lk/publications/css/owl.carousel.min.css" />
-        <link rel="stylesheet" href="https://aces.ce.pdn.ac.lk/publications/css/owl.theme.default.min.css" />
-        <link rel="stylesheet" href="https://aces.ce.pdn.ac.lk/publications/css/owl.theme.default.min.css" />
-        <link rel="stylesheet" href="https://aces.ce.pdn.ac.lk/publications/css/jquery.fancybox.min.css" />
-        <link rel="stylesheet" href="https://aces.ce.pdn.ac.lk/publications/css/bootstrap-datepicker.css" />
-        <link rel="stylesheet" href="https://aces.ce.pdn.ac.lk/publications/css/aos.css" />
+        <link
+          rel="stylesheet"
+          href="https://aces.ce.pdn.ac.lk/publications/fonts/icomoon/style.css"
+        />
+        <link
+          rel="stylesheet"
+          href="https://aces.ce.pdn.ac.lk/publications/fonts/flaticon/font/flaticon.css"
+        />
+        <link
+          rel="stylesheet"
+          href="https://aces.ce.pdn.ac.lk/publications/css/bootstrap.min.css"
+        />
+        <link
+          rel="stylesheet"
+          href="https://aces.ce.pdn.ac.lk/publications/css/jquery-ui.css"
+        />
+        <link
+          rel="stylesheet"
+          href="https://aces.ce.pdn.ac.lk/publications/css/owl.carousel.min.css"
+        />
+        <link
+          rel="stylesheet"
+          href="https://aces.ce.pdn.ac.lk/publications/css/owl.theme.default.min.css"
+        />
+        <link
+          rel="stylesheet"
+          href="https://aces.ce.pdn.ac.lk/publications/css/owl.theme.default.min.css"
+        />
+        <link
+          rel="stylesheet"
+          href="https://aces.ce.pdn.ac.lk/publications/css/jquery.fancybox.min.css"
+        />
+        <link
+          rel="stylesheet"
+          href="https://aces.ce.pdn.ac.lk/publications/css/bootstrap-datepicker.css"
+        />
+        <link
+          rel="stylesheet"
+          href="https://aces.ce.pdn.ac.lk/publications/css/aos.css"
+        />
         <link
           href="https://aces.ce.pdn.ac.lk/publications/css/jquery.mb.YTPlayer.min.css"
           media="all"
           rel="stylesheet"
           type="text/css"
         />
-        <link rel="stylesheet" href="https://aces.ce.pdn.ac.lk/publications/css/style.css" />
+        <link
+          rel="stylesheet"
+          href="https://aces.ce.pdn.ac.lk/publications/css/style.css"
+        />
       </Head>
       <Header />
       {children}
