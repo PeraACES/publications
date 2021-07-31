@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image'
 import Link from '../Link/Link';
 
 export default function Header() {
@@ -18,7 +19,7 @@ export default function Header() {
             <div className="col-12 col-lg-6 d-flex">
               <Link href="/">
                 <a className="site-logo">
-                  <img
+                  <Image
                     src="/images/aces-logo-vector.png"
                     alt="aces-logo"
                     className="escape-logo"
