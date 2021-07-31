@@ -5,23 +5,10 @@ import Layout from '../../components/Layout/Layout';
 import ReactMarkdown from 'react-markdown';
 import { useState } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
+import Supervisor from '../../components/Common/Supervisor';
+import Sponsor from '../../components/Common/Sponsor';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
-
-const Sponsor = ({ id, image, link, alt }) => (
-  <div className="col m-2" key={id}>
-    <a href={link} target="_blank" rel="noreferrer">
-      {!!image && image.url && (
-        <img
-          width="70"
-          src={image.url}
-          alt={alt}
-          style={{ borderRadius: '3px', background: 'transparent' }}
-        />
-      )}
-    </a>
-  </div>
-);
 
 const Details = ({ proceeding }) => {
   const [numPages, setNumPages] = useState(null);
@@ -86,64 +73,36 @@ const Details = ({ proceeding }) => {
                   className="thumbnail order-md-1 mr-5"
                 />
                 <div className="contents order-md-2 pl-0 pt-0">
-                  <h2>Symposium Chair</h2>
-                  <div className="col-lg-6">
-                    <div className="post-entry-2 d-flex">
-                      <div className="col-md-8" key={proceeding.SymposiumChair.id}>
-                        <div className="post-entry-1">
-                          {!!proceeding.SymposiumChair.SupervisorImage && (
-                            <img
-                              width="70"
-                              height="70"
-                              src={proceeding.SymposiumChair.SupervisorImage.url}
-                              alt="Image"
-                              className="img-fluid"
-                            />
-                          )}
-                          <h2>
-                            {!!proceeding.SymposiumChair.link ? (
-                              <a
-                                href={proceeding.SymposiumChair.link}
-                                target="_blank"
-                                rel="noreferrer"
-                              >
-                                {proceeding.SymposiumChair.SupervisorName}
-                              </a>
-                            ) : (
-                              <p>{proceeding.SymposiumChair.SupervisorName}</p>
-                            )}
-                          </h2>
+                  <div className="container">
+                    <div className="row text-center">
+                      <div className="col">
+                        <h5>Symposium Chair</h5>
+                        <div className="row mt-4 justify-content-center">
+                          <Supervisor
+                            id={proceeding.SymposiumChair.id}
+                            image={proceeding.SymposiumChair.SupervisorImage}
+                            link={proceeding.SymposiumChair.link}
+                            alt={proceeding.SymposiumChair.SupervisorName}
+                            name={proceeding.SymposiumChair.SupervisorName}
+                          />
                         </div>
                       </div>
-                    </div>
-                  </div>
-                  <h2>Symposium Editors</h2>
-                  <div className="col-lg-6">
-                    <div className="post-entry-2 d-flex">
-                      {proceeding.SymposiumEditors.map((editor) => (
-                        <div className="col-md-8" key={editor.id}>
-                          <div className="post-entry-1">
-                            {!!editor.SupervisorImage && (
-                              <img
-                                width="70"
-                                height="70"
-                                src={editor.SupervisorImage.url}
-                                alt="Image"
-                                className="img-fluid"
+                      <div className="col">
+                        <h5>Symposium Editors</h5>
+                        <div className="row mt-4 justify-content-center">
+                          {!!proceeding.SymposiumEditors &&
+                            Array.isArray(proceeding.SymposiumEditors) &&
+                            proceeding.SymposiumEditors.map((editor) => (
+                              <Supervisor
+                                id={editor.id}
+                                image={editor.SupervisorImage}
+                                link={editor.link}
+                                alt={editor.SupervisorName}
+                                name={editor.SupervisorName}
                               />
-                            )}
-                            <h2>
-                              {!!editor.link ? (
-                                <a href={editor.link} target="_blank" rel="noreferrer">
-                                  {editor.SupervisorName}
-                                </a>
-                              ) : (
-                                <p>{editor.SupervisorName}</p>
-                              )}
-                            </h2>
-                          </div>
+                            ))}
                         </div>
-                      ))}
+                      </div>
                     </div>
                   </div>
                 </div>
