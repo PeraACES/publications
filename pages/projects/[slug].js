@@ -68,7 +68,6 @@ const Details = ({ project }) => {
                                 className="img-fluid"
                               />
                             )}
-
                             <h2>
                               {!!supervisor.link ? (
                                 <a

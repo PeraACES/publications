@@ -16,10 +16,10 @@ export default function Header() {
         <div className="container pb-0 pt-1">
           <div className="row align-items-center">
             <div className="col-12 col-lg-6 d-flex">
-              <Link href="https://aces.ce.pdn.ac.lk/publications/">
+              <Link href="/">
                 <a className="site-logo">
                   <img
-                    src="https://aces.ce.pdn.ac.lk/publications/images/aces-logo-vector.png"
+                    src="/images/aces-logo-vector.png"
                     alt="aces-logo"
                     className="escape-logo"
                   />
@@ -84,22 +84,22 @@ export default function Header() {
                 >
                   <ul className="site-menu main-menu js-clone-nav mr-auto d-none pl-0 d-lg-block">
                     <li className="active">
-                      <Link href="https://aces.ce.pdn.ac.lk/publications/">
+                      <Link href="/">
                         <a className="nav-link text-left">HOME</a>
                       </Link>
                     </li>
                     <li>
-                      <Link href="https://aces.ce.pdn.ac.lk/publications/precedings">
-                        <a className="nav-link text-left">PRECEDINGS</a>
+                      <Link href="/proceedings">
+                        <a className="nav-link text-left">PROCEEDINGS</a>
                       </Link>
                     </li>
                     <li>
-                      <Link href="https://aces.ce.pdn.ac.lk/publications/projects">
+                      <Link href="/projects">
                         <a className="nav-link text-left">PROJECTS</a>
                       </Link>
                     </li>
                     <li>
-                      <Link href="https://aces.ce.pdn.ac.lk/publications/contact">
+                      <Link href="/contact">
                         <a className="nav-link text-left">CONTACT</a>
                       </Link>
                     </li>

@@ -87,7 +87,6 @@ const Details = ({ proceeding }) => {
                               className="img-fluid"
                             />
                           )}
-
                           <h2>
                             {!!proceeding.SymposiumChair.link ? (
                               <a
@@ -120,7 +119,6 @@ const Details = ({ proceeding }) => {
                                 className="img-fluid"
                               />
                             )}
-
                             <h2>
                               {!!editors.link ? (
                                 <a href={editors.link} target="_blank" rel="noreferrer">
