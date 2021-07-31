@@ -23,7 +23,10 @@ export default function ListProjectEntry({
       <div className="contents order-md-1 pl-4">
         {!!title && (
           <h2>
-            <Link href={`/proceedings/${slug}`}>
+            <Link
+              href={`/proceedings/${slug}`}
+              as={`${process.env.ASSET_PREFIX}/proceedings/${slug}`}
+            >
               <a>{title}</a>
             </Link>
           </h2>
@@ -35,7 +38,10 @@ export default function ListProjectEntry({
           <span className="date-read">{moment(createdAt).fromNow()}</span>
         </div>
         {displayButton && (
-          <Link href={`/proceedings/${slug}`}>
+          <Link
+            href={`/proceedings/${slug}`}
+            as={`${process.env.ASSET_PREFIX}/proceedings/${slug}`}
+          >
             <a className="btn btn-info mt-2" role="button">
               View More
             </a>

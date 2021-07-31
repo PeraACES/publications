@@ -16,7 +16,7 @@ export default function Header() {
         <div className="container pb-0 pt-1">
           <div className="row align-items-center">
             <div className="col-12 col-lg-6 d-flex">
-              <Link href="/">
+              <Link href="/" as={`${process.env.ASSET_PREFIX}/`}>
                 <a className="site-logo">
                   <img
                     src="/images/aces-logo-vector.png"
@@ -84,22 +84,25 @@ export default function Header() {
                 >
                   <ul className="site-menu main-menu js-clone-nav mr-auto d-none pl-0 d-lg-block">
                     <li className="active">
-                      <Link href="/">
+                      <Link href="/" as={`${process.env.ASSET_PREFIX}/`}>
                         <a className="nav-link text-left">HOME</a>
                       </Link>
                     </li>
                     <li>
-                      <Link href="/proceedings">
+                      <Link
+                        href="/proceedings"
+                        as={`${process.env.ASSET_PREFIX}/proceedings`}
+                      >
                         <a className="nav-link text-left">PROCEEDINGS</a>
                       </Link>
                     </li>
                     <li>
-                      <Link href="/projects">
+                      <Link href="/projects" as={`${process.env.ASSET_PREFIX}/projects`}>
                         <a className="nav-link text-left">PROJECTS</a>
                       </Link>
                     </li>
                     <li>
-                      <Link href="/contact">
+                      <Link href="/contact" as={`${process.env.ASSET_PREFIX}/contact`}>
                         <a className="nav-link text-left">CONTACT</a>
                       </Link>
                     </li>

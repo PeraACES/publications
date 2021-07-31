@@ -10,7 +10,10 @@ export default function SmallProjectEntry({ id, name, image, slug, createdAt }) 
       <div className="contents">
         {!!name && (
           <h2>
-            <Link href={`/projects/${slug}`}>
+            <Link
+              href={`/projects/${slug}`}
+              as={`${process.env.ASSET_PREFIX}/projects/${slug}`}
+            >
               <a>{name}</a>
             </Link>
           </h2>

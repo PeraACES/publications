@@ -7,7 +7,10 @@ export default function CarouselItem({ id, slug, title, subtitle, image, markup 
       <div className="container">
         <div className="half-post-entry d-block d-lg-flex bg-light">
           {!!image && (
-            <Link href={`/proceedings/${slug}`}>
+            <Link
+              href={`/proceedings/${slug}`}
+              as={`${process.env.ASSET_PREFIX}/proceedings/${slug}`}
+            >
               <a>
                 <img src={image.formats.small.url} alt="Image" className="img-bg" />
               </a>
