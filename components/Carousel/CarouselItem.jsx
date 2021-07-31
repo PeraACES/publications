@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '../Link/Link';
 import ReactMarkdown from 'react-markdown';
 
 export default function CarouselItem({ id, slug, title, subtitle, image, markup }) {

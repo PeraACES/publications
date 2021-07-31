@@ -1,5 +1,5 @@
 import moment from 'moment';
-import Link from 'next/link';
+import Link from '../Link/Link';
 import TextTruncate from 'react-text-truncate';
 
 export default function CardProceedingEntry({

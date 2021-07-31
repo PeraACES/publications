@@ -1,5 +1,5 @@
 import moment from 'moment';
-import Link from 'next/link';
+import Link from '../Link/Link';
 
 export default function SmallProceedingEntry({ id, title, image, slug, createdAt }) {
   return (

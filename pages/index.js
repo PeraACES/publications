@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '../components/Link/Link';
 import React from 'react';
 import Carousel from '../components/Carousel/Carousel';
 import Layout from '../components/Layout/Layout';
