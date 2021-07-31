@@ -1,6 +1,6 @@
 import moment from 'moment';
 import Link from '../Link/Link';
-import TextTruncate from 'react-text-truncate';
+import ReactMarkdown from 'react-markdown';
 
 export default function ListProjectEntry({
   id,
@@ -28,9 +28,7 @@ export default function ListProjectEntry({
             </Link>
           </h2>
         )}
-        {!!markup && (
-          <TextTruncate line={4} element="p" truncateText="..." text={markup} />
-        )}
+        {!!markup && <ReactMarkdown>{markup}</ReactMarkdown>}
         <div className="post-meta">
           <span className="date-read">{moment(createdAt).fromNow()}</span>
         </div>
