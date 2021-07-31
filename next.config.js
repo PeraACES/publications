@@ -9,6 +9,7 @@ module.exports = {
   exportPathMap: () => ({
     '/': { page: '/' }
   }),
+  distDir: "_next",
   assetPrefix,
   webpack: (config) => {
     config.plugins.push(
