@@ -94,6 +94,7 @@ const Details = ({ proceeding }) => {
                             Array.isArray(proceeding.SymposiumEditors) &&
                             proceeding.SymposiumEditors.map((editor) => (
                               <Supervisor
+                                key={editor.id}
                                 id={editor.id}
                                 image={editor.SupervisorImage}
                                 link={editor.link}
@@ -158,13 +159,14 @@ const Details = ({ proceeding }) => {
             {!!proceeding.sponsorGroups &&
               Array.isArray(proceeding.sponsorGroups) &&
               proceeding.sponsorGroups.map((sponserGroup) => (
-                <div className="col">
+                <div className="col" key={sponserGroup.id}>
                   {!!sponserGroup.title && <h5>{sponserGroup.title}</h5>}
                   <div className="row mt-4 justify-content-center">
                     {!!sponserGroup.sponsors &&
                       Array.isArray(sponserGroup.sponsors) &&
                       sponserGroup.sponsors.map((sponsor) => (
                         <Sponsor
+                          key={sponsor.id}
                           id={sponsor.id}
                           image={sponsor.image}
                           link={sponsor.link}
