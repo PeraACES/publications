@@ -3,6 +3,8 @@ import ErrorPage from 'next/error';
 import { getAllProjectSlugs, getProjectBySlug } from '../../lib/api';
 import Layout from '../../components/Layout/Layout';
 import ReactMarkdown from 'react-markdown';
+import Supervisor from '../../components/Common/Supervisor';
+import Author from '../../components/Common/Author';
 
 const Details = ({ project }) => {
   // console.log(project);
@@ -55,32 +57,14 @@ const Details = ({ project }) => {
                   <div className="col-lg-6">
                     <div className="post-entry-2 d-flex">
                       {project.supervisors.map((supervisor) => (
-                        <div className="col-md-8" key={supervisor.id}>
-                          <div className="post-entry-1">
-                            {!!supervisor.SupervisorImage && (
-                              <img
-                                width="70"
-                                height="70"
-                                src={supervisor.SupervisorImage.url}
-                                alt="Image"
-                                className="img-fluid"
-                              />
-                            )}
-                            <h2>
-                              {!!supervisor.link ? (
-                                <a
-                                  href={supervisor.link}
-                                  target="_blank"
-                                  rel="noreferrer"
-                                >
-                                  {supervisor.SupervisorName}
-                                </a>
-                              ) : (
-                                <p>{supervisor.SupervisorName}</p>
-                              )}
-                            </h2>
-                          </div>
-                        </div>
+                        <Supervisor
+                          key={supervisor.id}
+                          id={supervisor.id}
+                          image={supervisor.SupervisorImage}
+                          link={supervisor.link}
+                          alt={supervisor.SupervisorName}
+                          name={supervisor.SupervisorName}
+                        />
                       ))}
                     </div>
                   </div>
@@ -88,22 +72,13 @@ const Details = ({ project }) => {
                   <div className="col-lg-6">
                     <div className="post-entry-2 d-flex">
                       {project.authors.map((author) => (
-                        <div className="col-md-8" key={author.id}>
-                          <div className="post-entry-1">
-                            {!!author.AuthorImage && (
-                              <img
-                                width="70"
-                                height="70"
-                                src={author.AuthorImage.url}
-                                alt="Image"
-                                className="img-fluid"
-                              />
-                            )}
-                            <h2>
-                              <p>{author.AuthorName}</p>
-                            </h2>
-                          </div>
-                        </div>
+                        <Author
+                          key={author.id}
+                          id={author.id}
+                          image={author.AuthorImage}
+                          alt={author.AuthorName}
+                          name={author.AuthorName}
+                        />
                       ))}
                     </div>
                   </div>
