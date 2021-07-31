@@ -9,7 +9,6 @@ module.exports = {
   exportPathMap: () => ({
     '/': { page: '/' }
   }),
-  basePath: '/publications',
   assetPrefix,
   webpack: (config) => {
     config.plugins.push(
