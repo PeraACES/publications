@@ -3,13 +3,13 @@ const webpack = require('webpack');
 const isProd = (process.env.NODE_ENV || 'production') === 'production';
 
 // Use the CDN in production and localhost for development.
-const assetPrefix = isProd ? 'https://aces.ce.pdn.ac.lk/publications' : '';
-
+const assetPrefix = isProd ? '/publications' : '';
 
 module.exports = {
   exportPathMap: () => ({
     '/': { page: '/' }
   }),
+  basePath: '/publications',
   assetPrefix,
   webpack: (config) => {
     config.plugins.push(
