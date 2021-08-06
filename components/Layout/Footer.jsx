@@ -90,9 +90,9 @@ export default function Footer() {
                       </a>
                     </li>
                     <li className="mb-2">
-                      <a href="mailto://head@ce.pdn.ac.lk">
+                      <a href="mailto://headce@pdn.ac.lk">
                         <span className="icon icon-envelope m-2"></span>
-                        <span className="text-info">head@ce.pdn.ac.lk</span>
+                        <span className="text-info">headce@pdn.ac.lk</span>
                       </a>
                     </li>
                   </ul>
