@@ -83,10 +83,16 @@ export default function Footer() {
                         ACES
                       </a>
                     </li>
-                    <li>
+                    <li className="mb-2">
                       <a href="mailto://aces@eng.pdn.ac.lk">
                         <span className="icon icon-envelope m-2"></span>
                         <span className="text-info">aces@eng.pdn.ac.lk</span>
+                      </a>
+                    </li>
+                    <li className="mb-2">
+                      <a href="mailto://head@ce.pdn.ac.lk">
+                        <span className="icon icon-envelope m-2"></span>
+                        <span className="text-info">head@ce.pdn.ac.lk</span>
                       </a>
                     </li>
                   </ul>
