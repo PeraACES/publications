@@ -57,7 +57,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <a
-                      href="https://pdn.ac.lk/"
+                      href="https://www.pdn.ac.lk/"
                       className="py-2 d-block"
                       target="_blank"
                       rel="noreferrer noopener"
@@ -74,8 +74,18 @@ export default function Footer() {
                 <div className="block-23 m-3">
                   <ul className="list-unstyled text-center">
                     <li>
+                      <a
+                        href="https://aces.ce.pdn.ac.lk/"
+                        className="py-2 d-block text-primary"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                      >
+                        ACES
+                      </a>
+                    </li>
+                    <li>
                       <a href="mailto://aces@eng.pdn.ac.lk">
-                        <span className="icon icon-envelope"></span>
+                        <span className="icon icon-envelope m-2"></span>
                         <span className="text-info">aces@eng.pdn.ac.lk</span>
                       </a>
                     </li>
