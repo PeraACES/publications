@@ -104,8 +104,9 @@ export default function Footer() {
             <div className="col-12">
               <div className="copyright">
                 <p>
-                  Copyright &copy; {new Date().getFullYear()} ACES, Association of Computer Engineering
-                  Students, University of Peradeniya | All rights reserved.
+                  Copyright &copy; {new Date().getFullYear()} ACES, Association of
+                  Computer Engineering Students, University of Peradeniya | All rights
+                  reserved.
                 </p>
               </div>
             </div>
