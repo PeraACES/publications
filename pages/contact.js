@@ -27,6 +27,7 @@ const Contact = ({ data, error }) => {
                   Array.isArray(textBlock.list) &&
                   textBlock.list.map((listItem) => (
                     <div
+                      key={listItem.id}
                       className="col-12 col-sm-12 col-md-6 text-center p-3"
                       style={{ paddingBottom: '1rem' }}
                     >
