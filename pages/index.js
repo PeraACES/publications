@@ -6,6 +6,7 @@ import CardProjectEntry from '../components/Projects/CardProjectEntry';
 import ListProjectEntry from '../components/Projects/ListProjectEntry';
 import SmallProjectEntry from '../components/Projects/SmallProjectEntry';
 import { API_URL } from '../config';
+import ReactMarkdown from 'react-markdown';
 
 const Home = ({ data, error }) => {
   const {
@@ -18,8 +19,7 @@ const Home = ({ data, error }) => {
     seoMetas
   } = data;
 
-  // console.log(featured_proceedings);
-
+  const textBlock = body[0];
   const featuredProject = featured_projects[0];
   const featuredProjects = featured_projects.slice(1);
 
@@ -56,7 +56,7 @@ const Home = ({ data, error }) => {
                 Array.isArray(header.button) &&
                 header.button.map((item) => (
                   <Link href={item.link} key={item.title}>
-                    <a className={`btn btn-${item.color} mr-4`} role="button">
+                    <a className={`btn btn-${item.color} m-2`} role="button">
                       {item.title}
                     </a>
                   </Link>
@@ -67,7 +67,52 @@ const Home = ({ data, error }) => {
       </div>
 
       {/* Carousel */}
-      <Carousel featured_proceedings={featured_proceedings} />
+      {!!featured_proceedings && <Carousel featured_proceedings={featured_proceedings} />}
+
+      {/* Text Block */}
+      <div className="site-section" style={{ paddingBottom: '1rem' }}>
+        <div className="container">
+          <div className="row">
+            <div className="col text-left">
+              {!!textBlock.title && (
+                <div className="section-title" style={{ marginBottom: '10px' }}>
+                  <h2>{textBlock.title}</h2>
+                </div>
+              )}
+              {!!textBlock.subtitle && (
+                <div className="text-black">
+                  <h5>{textBlock.subtitle}</h5>
+                </div>
+              )}
+              {!!textBlock.content && <ReactMarkdown>{textBlock.content}</ReactMarkdown>}
+            </div>
+          </div>
+          <div className="row">
+            <div className="col text-center py-5">
+              {!!textBlock.buttons &&
+                Array.isArray(textBlock.buttons) &&
+                textBlock.buttons.map((item) => (
+                  <Link href={item.link} key={item.title}>
+                    {item.type === 'external' ? (
+                      <a
+                        className={`btn btn-${item.color} m-2`}
+                        role="button"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                      >
+                        {item.title}
+                      </a>
+                    ) : (
+                      <a className={`btn btn-${item.color} m-2`} role="button">
+                        {item.title}
+                      </a>
+                    )}
+                  </Link>
+                ))}
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* Body */}
       {/* <> TODO </> */}
