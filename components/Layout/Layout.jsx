@@ -32,6 +32,10 @@ export default function Layout({ children, title, seo, seoMetas = [] }) {
             <meta property={item.property} content={item.content} key={item._id} />
           ))}
         <link
+          rel="shortcut icon"
+          href="https://aces.ce.pdn.ac.lk/publications/favicon.ico"
+        />
+        <link
           href="https://fonts.googleapis.com/css?family=B612+Mono|Cabin:400,700&display=swap"
           rel="stylesheet"
         />
