@@ -1,9 +1,19 @@
+import { useState } from 'react';
 import Layout from '../components/Layout/Layout';
 import ListProjectEntry from '../components/Projects/ListProjectEntry';
 import { getAllProjects } from '../lib/api';
 
 export default function Projects({ data, error, href }) {
   const { projects } = data;
+  const [searchValue, setSearchValue] = useState('');
+
+  const filteredProjects = projects.filter((project) => {
+    const searchContent = project.ProjectName + project.Abstract;
+    return searchContent.toLowerCase().includes(searchValue.toLowerCase());
+  });
+
+  const displayProjects =
+    projects.length > 0 && !searchValue ? projects : filteredProjects;
 
   if (error) {
     return (
@@ -31,11 +41,24 @@ export default function Projects({ data, error, href }) {
           <div className="row">
             <div className="col-lg-12">
               <div className="section-title">
-                <h2>All Projects</h2>
+                {searchValue !== '' ? <h2>Filtered Projects</h2> : <h2>All Projects</h2>}
+                <div className="col">
+                  <form action="#" className="search-form d-inline-block col">
+                    <div className="d-flex">
+                      <input
+                        type="email"
+                        className="form-control"
+                        placeholder="Search"
+                        onChange={(e) => setSearchValue(e.target.value)}
+                      />
+                    </div>
+                  </form>
+                </div>
               </div>
-              {!!projects &&
-                Array.isArray(projects) &&
-                projects.map((item) => (
+              {!filteredProjects.length && 'No projects found.'}
+              {!!displayProjects &&
+                Array.isArray(displayProjects) &&
+                displayProjects.map((item) => (
                   <ListProjectEntry
                     key={item.id}
                     id={item.id}
