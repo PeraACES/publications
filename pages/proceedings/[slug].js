@@ -154,6 +154,36 @@ const Details = ({ proceeding }) => {
             </div>
           </div>
         </div>
+        {!!proceeding.videoGroup && (
+          <div className="container mt-5 p-5">
+            <div className="row text-center">
+              <h4>{proceeding.videoGroup.title}</h4>
+            </div>
+            <div className="row text-left">
+              {!!proceeding.videoGroup &&
+                !!proceeding.videoGroup.videos &&
+                Array.isArray(proceeding.videoGroup.videos) &&
+                proceeding.videoGroup.videos.map((video) => (
+                  <div className="col-md-6 col-xl-6 col-sm-12 p-4" key={video.id}>
+                    <div className="row justify-content-left">
+                      <p>{video.subtitle}</p>
+                      <p>
+                        <a
+                          href={video.youtube_link}
+                          className="more"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          {video.title}{' '}
+                          <span className="icon-keyboard_arrow_right"></span>
+                        </a>
+                      </p>
+                    </div>
+                  </div>
+                ))}
+            </div>
+          </div>
+        )}
         <div className="container mt-5 pt-5">
           <div className="row text-center">
             {!!proceeding.sponsorGroups &&
